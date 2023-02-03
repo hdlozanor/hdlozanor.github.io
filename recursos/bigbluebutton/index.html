@@ -1,0 +1,1366 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://aulasvirtuales.udistrital.edu.co/recursos/bigbluebutton/">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Big Blue Button - ManualDocente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#big-blue-button" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="ManualDocente" class="md-header__button md-logo" aria-label="ManualDocente" data-md-component="logo">
+      
+  <img src="../../img/logo1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ManualDocente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Big Blue Button
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ManualDocente" class="md-nav__button md-logo" aria-label="ManualDocente" data-md-component="logo">
+      
+  <img src="../../img/logo1.png" alt="logo">
+
+    </a>
+    ManualDocente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Soporte
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Soporte" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Soporte
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/solicitudes/" class="md-nav__link">
+        Solicitudes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/mesaayuda/" class="md-nav__link">
+        Mesa de Ayuda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Cursos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Cursos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/configuracion/" class="md-nav__link">
+        Configuracion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/grupos/" class="md-nav__link">
+        Grupos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/matriculacion/" class="md-nav__link">
+        Matriculacion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/reinicio/" class="md-nav__link">
+        Reinicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/copiasseguridad/" class="md-nav__link">
+        Copias de seguridad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/calificaciones/" class="md-nav__link">
+        Calificaciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Recursos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recursos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recursos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archivo/" class="md-nav__link">
+        Archivo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpeta/" class="md-nav__link">
+        Carpeta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etiqueta/" class="md-nav__link">
+        Etiqueta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libro/" class="md-nav__link">
+        Libro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagina/" class="md-nav__link">
+        Pagina
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url/" class="md-nav__link">
+        URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asistencia/" class="md-nav__link">
+        Asistencia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basedatos/" class="md-nav__link">
+        Base de datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Big Blue Button
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Big Blue Button
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#big-blue-button_1" class="md-nav__link">
+    Big Blue Button
+  </a>
+  
+    <nav class="md-nav" aria-label="Big Blue Button">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-generales" class="md-nav__link">
+    Ajustes generales:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-actividadsala" class="md-nav__link">
+    Configuración de actividad/sala:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-para-grabar" class="md-nav__link">
+    Ver para grabar:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-de-bloqueo" class="md-nav__link">
+    Ajustes de bloqueo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presentacion-de-contenido" class="md-nav__link">
+    Presentación de contenido:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rol-asignado-durante-la-sesion-en-vivo" class="md-nav__link">
+    Rol asignado durante la sesión en vivo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion-de-sesiones" class="md-nav__link">
+    Programación de sesiones:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-comunes-del-modulo" class="md-nav__link">
+    Ajustes comunes del módulo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones-de-acceso" class="md-nav__link">
+    Restricciones de acceso:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalizacion-de-actividad" class="md-nav__link">
+    Finalización de actividad:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcas" class="md-nav__link">
+    Marcas:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#competencias" class="md-nav__link">
+    Competencias:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consulta/" class="md-nav__link">
+        Consulta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h5p/" class="md-nav__link">
+        H5P
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Actividades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Actividades" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Actividades
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/foro/" class="md-nav__link">
+        Foro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/encuesta/" class="md-nav__link">
+        Encuesta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/cuestionario/" class="md-nav__link">
+        Cuestionarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/bancopreguntas/" class="md-nav__link">
+        Banco de preguntas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/geogebra/" class="md-nav__link">
+        Geogebra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/glosario/" class="md-nav__link">
+        Glosario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/herramientaexterna/" class="md-nav__link">
+        Herramienta externa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/hotspot/" class="md-nav__link">
+        Hotspot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/juegos/" class="md-nav__link">
+        Juegos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/leccion/" class="md-nav__link">
+        Leccion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/scorm/" class="md-nav__link">
+        SCORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/taller.md" class="md-nav__link">
+        Taller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/tarea/" class="md-nav__link">
+        Tarea
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/wiki/" class="md-nav__link">
+        Wiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informes/informecurso/" class="md-nav__link">
+        Informes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Nosotros
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nosotros" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Nosotros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/planestic/" class="md-nav__link">
+        Planestic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/udistrital/" class="md-nav__link">
+        Udistrital
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/ingenieria.md" class="md-nav__link">
+        Ingenieria
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/mesaayuda/" class="md-nav__link">
+        Mesa de ayuda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/aulasvirtuales/" class="md-nav__link">
+        Aulas Virtuales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/edx/" class="md-nav__link">
+        EDX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/campusvirtual/" class="md-nav__link">
+        Campus virtual
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#big-blue-button_1" class="md-nav__link">
+    Big Blue Button
+  </a>
+  
+    <nav class="md-nav" aria-label="Big Blue Button">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-generales" class="md-nav__link">
+    Ajustes generales:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-actividadsala" class="md-nav__link">
+    Configuración de actividad/sala:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-para-grabar" class="md-nav__link">
+    Ver para grabar:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-de-bloqueo" class="md-nav__link">
+    Ajustes de bloqueo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presentacion-de-contenido" class="md-nav__link">
+    Presentación de contenido:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rol-asignado-durante-la-sesion-en-vivo" class="md-nav__link">
+    Rol asignado durante la sesión en vivo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacion-de-sesiones" class="md-nav__link">
+    Programación de sesiones:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustes-comunes-del-modulo" class="md-nav__link">
+    Ajustes comunes del módulo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricciones-de-acceso" class="md-nav__link">
+    Restricciones de acceso:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalizacion-de-actividad" class="md-nav__link">
+    Finalización de actividad:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcas" class="md-nav__link">
+    Marcas:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#competencias" class="md-nav__link">
+    Competencias:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><strong>Recursos</strong></p>
+<h1 id="big-blue-button">Big Blue Button</h1>
+<h2 id="big-blue-button_1"><strong>Big Blue Button</strong></h2>
+<p>Big Blue Button BN le permite crear dentro de Moodle enlaces hacia aulas en línea en tiempo real con salas que emplean BigBlueButton, un sistema de código abierto para conferencias web para la educación a distancia.</p>
+<p>Usando BigBlueButtonBN puede especificar el título, descripción, fecha del calendario (que le proporciona un rango de fechas para unirse a la sesión), grupos, y detalles acerca de la grabación de la sesión en línea. Para ver grabaciones posteriormente, añada un recurso RecordingsBN a este curso.</p>
+<p>Para iniciar una sala de conferencia con BigBlueButtonBN debe ubicar en el aula el lugar en donde desea que esté ubicada esta actividad. Una vez seleccionado el espacio debe activar la edición, dando clic en el botón que ejecuta esta orden, este botón está ubicado en la esquina superior derecha.</p>
+<p><img alt="" src="/img/recursos/bbb/bbb01.png" /></p>
+<p>Luego debe ir a la parte final del contenido de la página y dar clic en la opción Añadir una actividad o un recurso. A continuación, se abrirá el menú de opciones de actividades y recurso de Moodle, allí debe dar clic en la actividad BigBlueButtonBN que tiene un icono azul con un “b” en el centro de color blanco. En ese momento se habilitará la opción de agregar, de clic en este botón. </p>
+<p><img alt="" src="/img/recursos/bbb/bbb02.png" /></p>
+<p><img alt="" src="/img/recursos/bbb/bbb03.png" /></p>
+<p>A continuación, se abrirá la página de la actividad BigBlueButtonBN en donde podrá configurarla, aquí podrá especificar el título, descripción, fecha del calendario (que le proporciona un rango de fechas para unirse a la sesión), grupos, y detalles acerca de la grabación de la sesión en línea.  Para ver grabaciones posteriormente añada el recurso RecordingsBN a este curso. Los tipos de instancia que se manejan desde BigBlueButtonBN son: <em>sala/actividad con grabaciones – solo salas/actividad – solo grabaciones</em>.</p>
+<p>Las siguientes son las opciones de configuración general de la actividad:</p>
+<h3 id="ajustes-generales"><strong>Ajustes generales:</strong></h3>
+<p>Nombre de la sala virtual, esta opción es obligatoria y permite identificar la sala de las demás actividades que se tengan en el aula.</p>
+<p>Descripción, esta opción cuenta con un cuadro de edición que permite incorporar diferentes recursos audiovisuales para brindar la mayor información a quien va a utilizar o asistir a la actividad. También permite activar o no la muestra la descripción en la página del curso, si se activa, la descripción anterior se mostrará en la página del curso justo debajo del enlace a la actividad. Además, cuenta con la posibilidad de notificar este cambio a los usuarios inscritos, al hacerlo se envía una notificación a todos los usuarios inscritos para informarles de que esta actividad se ha añadido o actualizado.</p>
+<h3 id="configuracion-de-actividadsala"><strong>Configuración de actividad/sala:</strong></h3>
+<p>En este espacio encontrará un recuadro en donde podrá disponer un mensaje de bienvenida que remplazaría el mensaje por defecto fijado por el servidor de BigBlueButtonBN. El mensaje puede incluir las palabras clave o estructura de etiquetas HTML que permitan cambiar la apariencia del texto. También están las opciones de <strong>esperar al moderador</strong>, si se activa los observadores deben esperar hasta que un moderador entre a la sesión para poder acceder. <strong>La sesión puede ser grabada</strong> y <strong>silenciar al comenzar.</strong> </p>
+<h3 id="ver-para-grabar"><strong>Ver para grabar:</strong></h3>
+<p>En esta opción se restringe a mostrar solo enlaces importados.</p>
+<h3 id="ajustes-de-bloqueo"><strong>Ajustes de bloqueo:</strong></h3>
+<p>Desde esta opción podrá habilitar: Desactivar las cámaras web, Desactivar los micrófonos, Desactivar el chat privado, Desactivar el chat público, Desactivar las notas compartidas, Ocultar la lista de usuarios, Bloquear el diseño de la sala, Ignorar los ajustes de bloqueo, Permitir ignorar los ajustes de bloqueo. Para ello debe dar clic en la casilla correspondiente, de este modo quedará habilitado o si por el contrario no lo desea habilitar, esta opción debe quedar en la casilla correspondiente vacía.  </p>
+<h3 id="presentacion-de-contenido"><strong>Presentación de contenido:</strong></h3>
+<p>Acá cuenta con el cuadro de edición que permite seleccionar archivos, que serían utilizados en la conferencia. Para ello puede dar clic en el primer botón de agregar   o Puede arrastrar y soltar archivos para añadirlos. <img alt="" src="/img/recursos/bbb/bbb04.png" /></p>
+<h3 id="rol-asignado-durante-la-sesion-en-vivo"><strong>Rol asignado durante la sesión en vivo:</strong></h3>
+<p>En esta opción podrá agregar participantes, uno a uno o todos los usuarios inscritos, ya sea por rol definido (profesor, profesor sin permiso de edición, estudiante, invitado) o usuario, si lo selecciona aparecerá el listado de participantes para que sean añadidos manualmente. También encontrará la lista de participantes que han sido agregados y la posibilidad de definir con qué perfil entra a la sesión, ya sea como observador o moderador.</p>
+<h3 id="programacion-de-sesiones"><strong>Programación de sesiones:</strong></h3>
+<p>En este apartado encuentra el calendario para configurar el acceso abierto y cerrado de la conferencia. Para ello debe habilitar la opción deseada y establecer la fecha y hora en el calendario. Si no lo configura la conferencia quedará abierta siempre.</p>
+<h3 id="ajustes-comunes-del-modulo"><strong>Ajustes comunes del módulo:</strong></h3>
+<p>Para establecer la disponibilidad de estos ajustes cuenta con los siguientes parámetros:</p>
+<ul>
+<li>
+<p><strong>Disponibilidad:</strong> si la disponibilidad se establece en “mostrar en la página del curso”, la actividad está disponible para los estudiantes (sujeto a las restricciones de acceso que se puedan establecer). Si la disponibilidad se establece en “ocultar a los estudiantes”, la actividad solo está disponible para los usuarios con permisos de ver actividades ocultas (profesor o profesor no editor). </p>
+</li>
+<li>
+<p><strong>Número ID:</strong> La configuración de número de ID proporciona una forma de identificar la actividad para fines como el cálculo de calificaciones o informes personalizados. De lo contrario, el campo se puede dejar en blanco. Para las actividades calificables, el número ID también se puede configurar en el libro de calificaciones, aunque solo se puede editar en la página de configuración de la actividad.</p>
+</li>
+<li>
+<p><strong>Modo de grupo:</strong> Esta configuración tiene tres opciones: Sin grupos. Grupos separados – cada miembro del grupo solamente puede ver a su propio grupo, los demás son invisibles. Grupos visibles – cada miembro del grupo trabaja en su propio grupo, pero también puede ver a los otros grupos. El modo de grupo definido a nivel del curso es el modo por defecto para todas las actividades dentro del curso. Cada actividad que soporta grupos también puede definir su propio modo de grupo, aunque si se forza el modo de grupo a nivel del curso, la configuración del modo de grupo para cada actividad es ignorada. En este apartado encontramos las opciones no hay grupos, grupos separados, grupos visibles. Por último, al habilitar uno o más grupos en este apartado se habilitan las opciones de añadir restricciones de acceso por grupo/agrupamiento. </p>
+</li>
+</ul>
+<h3 id="restricciones-de-acceso"><strong>Restricciones de acceso:</strong></h3>
+<p>A través de esta opción podrá parametrizar las restricciones de acceso a ala actividad al dar clic en añadir restricción, las cuales pueden ser combinadas. Estas restricciones son:</p>
+<ul>
+<li>
+<p><strong>Fecha:</strong> prevenir el acceso hasta (o desde) una fecha y hora predeterminada.</p>
+</li>
+<li>
+<p><strong>Calificación:</strong> los estudiantes deben alcanzar una calificación determinada.</p>
+</li>
+<li>
+<p><strong>Perfil de usuario:</strong> control de acceso basados en los campos de perfil de usuario.</p>
+</li>
+<li>
+<p><strong>Conjunto de restricciones:</strong> añadir un conjunto de restricciones que se deben aplicar en su conjunto.</p>
+</li>
+</ul>
+<p>Cada una de estas restricciones al seleccionarla abre las opciones de configuración según la elección establecida.</p>
+<h3 id="finalizacion-de-actividad"><strong>Finalización de actividad:</strong></h3>
+<p>Desde aquí se puede establecer de manera global la entrega y tiempos de entrega de la actividad. Para ello cuenta con las siguientes opciones:</p>
+<ul>
+<li><strong>Rastreo de finalización:</strong> si se activa esta opción, se rastrea el grado de finalización de cualquier actividad, bien manual, bien automáticamente, basándose en determinadas condiciones. Si se desea, se pueden fijar múltiples condiciones. Si se hace así, la actividad únicamente se considera completa si se cumplen todas las condiciones.  Para ello cuenta con las opciones: no indicar finalización de la actividad, los estudiantes pueden marcar manualmente la actividad como completada y mostrar la actividad como completada cuando se cumplan las condiciones.</li>
+</ul>
+<h3 id="marcas"><strong>Marcas:</strong></h3>
+<p>Este espacio es solo para cuando se manejan elementos de etiquetas dentro del aula. Si es así en el menú de marcas saldrán cada una de estas, allí seleccione la que considere pertinente.</p>
+<h3 id="competencias"><strong>Competencias:</strong></h3>
+<p>Desde este punto podrá establecer qué competencias de los cursos serán vinculadas a esta actividad. Para ello debe ubicar en la opción buscar la competencia que desee. También está la posibilidad de configurar que al finalizar la actividad pueda: hacer nada, adjuntar evidencia, enviar para revisión y completar la competencia. Esto será enviado al apartado general de competencias del aula.</p>
+<p>Al finalizar la configuración deseada encontrará en la parte inferior los botones de:</p>
+<ul>
+<li>
+<p>Guardar cambios y regresar al curso, el cual cerrará la configuración de la actividad como completada.</p>
+</li>
+<li>
+<p>Guardar cambios y mostrar, en donde permite hacer un salvamento de los parámetros hasta ahora establecidos y continuar editando la actividad.</p>
+</li>
+<li>
+<p>Cancelar. Esto borrará todos los cambios realizados y regresará al curso.</p>
+</li>
+</ul>
+<p><img alt="" src="/img/recursos/bbb/bbb05.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../basedatos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Base de datos" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Base de datos
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../consulta/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Consulta" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Consulta
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1227 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://aulasvirtuales.udistrital.edu.co/recursos/basedatos/">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Base de datos - ManualDocente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#base-de-datos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="ManualDocente" class="md-header__button md-logo" aria-label="ManualDocente" data-md-component="logo">
+      
+  <img src="../../img/logo1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ManualDocente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Base de datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ManualDocente" class="md-nav__button md-logo" aria-label="ManualDocente" data-md-component="logo">
+      
+  <img src="../../img/logo1.png" alt="logo">
+
+    </a>
+    ManualDocente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Soporte
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Soporte" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Soporte
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/solicitudes/" class="md-nav__link">
+        Solicitudes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/mesaayuda/" class="md-nav__link">
+        Mesa de Ayuda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Cursos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Cursos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/configuracion/" class="md-nav__link">
+        Configuracion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/grupos/" class="md-nav__link">
+        Grupos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/matriculacion/" class="md-nav__link">
+        Matriculacion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/reinicio/" class="md-nav__link">
+        Reinicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/copiasseguridad/" class="md-nav__link">
+        Copias de seguridad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cursos/calificaciones/" class="md-nav__link">
+        Calificaciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Recursos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recursos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recursos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archivo/" class="md-nav__link">
+        Archivo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpeta/" class="md-nav__link">
+        Carpeta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etiqueta/" class="md-nav__link">
+        Etiqueta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libro/" class="md-nav__link">
+        Libro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagina/" class="md-nav__link">
+        Pagina
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../url/" class="md-nav__link">
+        URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asistencia/" class="md-nav__link">
+        Asistencia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Base de datos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Base de datos
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos_1" class="md-nav__link">
+    Base de datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-una-base-de-datos" class="md-nav__link">
+    Crear una base de datos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edicion-de-la-base-de-datos" class="md-nav__link">
+    Edición de la base de datos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bigbluebutton/" class="md-nav__link">
+        Big Blue Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consulta/" class="md-nav__link">
+        Consulta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h5p/" class="md-nav__link">
+        H5P
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Actividades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Actividades" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Actividades
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/foro/" class="md-nav__link">
+        Foro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/encuesta/" class="md-nav__link">
+        Encuesta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/cuestionario/" class="md-nav__link">
+        Cuestionarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/bancopreguntas/" class="md-nav__link">
+        Banco de preguntas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/geogebra/" class="md-nav__link">
+        Geogebra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/glosario/" class="md-nav__link">
+        Glosario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/herramientaexterna/" class="md-nav__link">
+        Herramienta externa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/hotspot/" class="md-nav__link">
+        Hotspot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/juegos/" class="md-nav__link">
+        Juegos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/leccion/" class="md-nav__link">
+        Leccion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/scorm/" class="md-nav__link">
+        SCORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/taller.md" class="md-nav__link">
+        Taller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/tarea/" class="md-nav__link">
+        Tarea
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/wiki/" class="md-nav__link">
+        Wiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informes/informecurso/" class="md-nav__link">
+        Informes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Nosotros
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nosotros" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Nosotros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/planestic/" class="md-nav__link">
+        Planestic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/udistrital/" class="md-nav__link">
+        Udistrital
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/ingenieria.md" class="md-nav__link">
+        Ingenieria
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/mesaayuda/" class="md-nav__link">
+        Mesa de ayuda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/aulasvirtuales/" class="md-nav__link">
+        Aulas Virtuales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/edx/" class="md-nav__link">
+        EDX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/campusvirtual/" class="md-nav__link">
+        Campus virtual
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos_1" class="md-nav__link">
+    Base de datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-una-base-de-datos" class="md-nav__link">
+    Crear una base de datos.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edicion-de-la-base-de-datos" class="md-nav__link">
+    Edición de la base de datos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><strong>Recursos</strong></p>
+<h1 id="base-de-datos">BASE DE DATOS</h1>
+<h2 id="base-de-datos_1"><strong>Base de datos</strong></h2>
+<p>Esta actividad permite que los estudiantes ingresen información a través de un formulario diseñado por el docente del curso, lo que, en el texto a continuación, se entiende como entrada. Los tipos de campo que pueden usarse en dicho formulario incluye casilla de verificación, botones de radio, menú desplegable, área de texto, URL, imagen y archivo cargado.</p>
+<p>Las actividades de base de datos pueden ser compartidas entre los cursos como opción preestablecida de manera que un profesor también puede importar y exportar las entradas de base de datos.</p>
+<p>Si el filtro de base de datos "auto enlace" está activo, cualquier entrada de la base de datos podrá ser enlazada automáticamente desde donde las palabras o frases que aparecen dentro en el curso.</p>
+<p>Un profesor puede permitir comentarios en las publicaciones. Las entradas también pueden ser calificadas por profesores u otros estudiantes (evaluación por pares). Las puntuaciones se agregarán para formar una calificación final que se registrará en el libro de calificaciones.</p>
+<p>Las actividades de base de datos tienen muchos usos, como, por ejemplo</p>
+<ul>
+<li>Una colección de enlaces de colaboración web, libros, reseñas de libros, referencias de revistas, etc.</li>
+<li>Para la visualización de fotos, carteles, sitios web o poemas de los estudiantes, ya así poder ser comentados por otros estudiantes.</li>
+</ul>
+<p>Para editar la Base de datos, es necesario poseer perfil de profesor, ingresar al aula virtual, dar clic en el botón “<em>Activar Edición</em>”, ubicarse en la sección de tema o semana y cliquear en el link “A<em>gregar un recurso o una actividad</em>” y elegir Base de datos. La edición de la base de datos tiene dos momentos: uno en el que se genera la estructura y funcionamiento del instrumento y otra donde se agregan los campos o variables sobre los cuales se generará la sistematización de datos.</p>
+<h3 id="crear-una-base-de-datos"><strong>Crear una base de datos.</strong></h3>
+<p><img alt="" src="/img/recursos/basedatos/basedatos01.png" /></p>
+<p>Como todas las actividades se debe configurar de forma obligatoria el Nombre y opcionalmente la descripción. </p>
+<p>Luego se debe definir cómo se comportarán las <strong>entradas</strong> de los estudiantes, según los criterios que se muestran a continuación. Recuerde que las entradas se relacionan con los registros que ingresen los estudiantes.</p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos02.png" /></p>
+<ul>
+<li><strong>Disponibilidad:</strong>  permite definir las fechas entre las cuales los estudiantes completarán la actividad y si luego de vencida la fecha, quedará visible para su </li>
+</ul>
+<p>lectura, aunque no puedan ingresar más entradas.</p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos03.png" /></p>
+<ul>
+<li><strong>Calificación:</strong> define si será evaluable o no para los estudiantes y cuál será el método de su calificación.</li>
+</ul>
+<p>Una vez se ha terminado de configurar la base de datos pulsamos el botón Guardar cambios y mostrar. Una vez pulsado el botón de Guardar y mostrar nos aparecerá la pantalla para editar la base.</p>
+<h3 id="edicion-de-la-base-de-datos"><strong>Edición de la base de datos</strong></h3>
+<p>Primero se debe definir los campos que va a tener la base de datos, conforme al contenido que se va a almacenar.</p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos04.png" /></p>
+<ul>
+<li>
+<p><strong>Crear un nuevo campo</strong>:  en esta lista desplegable es posible escoger entre varios tipos de campos, los cuales, al ser seleccionados, debe asignarse un nombre de manera obligatoria y una descripción de manera opcional. A continuación, se da una descripción del funcionamiento de los tipos de campos[1]:</p>
+</li>
+<li>
+<p><strong>Archivo.</strong> Cuando los usuarios agregan una entrada a la base, verán el botón Examinar... que pueden utilizar para subir un archivo que se adjuntará a la entrada. Si lo que queremos es adjuntar un archivo de imagen entonces es mejor utilizar el tipo de campo Dibujo. Determinaremos aquí el tamaño máximo permitido para el archivo adjunto. </p>
+</li>
+<li>
+<p><strong>Botón de radio.</strong> Permite al usuario elegir entre un conjunto de opciones. Si no se selecciona nada se le mostrará un mensaje pidiéndole que lo haga y sólo se le permitirá añadir una entrada cuando lo haya hecho. En el formulario de configuración escribiremos en Opciones cada una de las opciones que se mostrarán utilizando una nueva línea para cada una de ellas.</p>
+</li>
+</ul>
+<p><img alt="" src="/img/recursos/basedatos/basedatos05.png" /></p>
+<p>[1] <a href="https://actividadesmoodle23.weebly.com/base-de-datos.html">Recursos Moodle - Base de datos</a></p>
+<ul>
+<li>
+<p><strong>Campo de Texto.</strong> Los usuarios pueden escribir un texto sin formato de hasta 60 caracteres. Si necesita escribir un texto más amplio o con formato, utilice el campo <strong>Área de texto</strong>. Si marca la casilla <em>Permitir</em> <em>autoenlace</em> cada vez que la palabra aparezca en una página del curso se creará automáticamente un enlace que remitirá a la entrada en la base de datos.</p>
+</li>
+<li>
+<p><strong>Casilla de selección.</strong> Permite al usuario elegir entre un conjunto de opciones, pero a diferencia de los botones de radio se puede seleccionar más de una a la vez, o no seleccionar ninguna. Escribiremos en Opciones las elecciones que se mostrarán, una por línea.</p>
+</li>
+</ul>
+<p><img alt="" src="/img/recursos/basedatos/basedatos06.png" /></p>
+<ul>
+<li><strong>Fecha</strong>. Permite a los usuarios elegir una fecha seleccionandola de una lista desplegable con el día, mes y año.</li>
+<li><strong>Imagen.</strong> Es parecida a Archivo, pero se utiliza para subir imágenes. Cuando se muestre la entrada en la base de datos se mostrará incrustado el archivo de imagen subido, a diferencia del campo Archivo que se mostrará como un vínculo. Opcionalmente determinaremos el ancho y el alto cuando la entrada se muestre individualmente (vista simple) o cuando se muestre en la lista de entradas. En la vista de lista la imagen debería mostrarse en un tamaño reducido para no estropear el diseño. Es buena idea determinar ambos parámetros para que la base tenga un aspecto estético consistente.</li>
+<li><strong>Longitud/latitud (Latlong)</strong>. Los usuarios escribirán aquí una localización geográfica especificando la longitud y latitud. Cuando se muestre esta entrada se verá un vínculo automáticamente generado por los servicios geográficos tales como Google Earth, Google Maps, OpenStreetMap, GeaBios,Mapstars, etc. Podemos elegir aquí cuál de esos servicios geográficos se utilizará.</li>
+<li><strong>Menú</strong>. Mostrará las opciones que aquí pongamos (una por línea) como un menú desplegable.</li>
+<li><strong>Menú (selección múltiple).</strong> Mostrará las opciones como un menú desplegable. Manteniendo pulsada la tecla Ctrl o Mayúsculas el usuario podrá seleccionar varias opciones. Este tipo de campo puede dar problemas si el usuario no tiene una versión del navegador capaz de proporcionar esta funcionalidad. En la mayoría de los casos utilizar un campo del tipo Casilla de selección es lo más recomendable.</li>
+<li><strong>Número.</strong> Almacena números en coma flotante (por ejemplo -1000; 3; 0.234)</li>
+<li><strong>URL.</strong> Se pedirá al usuario que ingrese una dirección web (url). Si se selecciona Autoenlazar la dirección se convertirá automáticamente en un vínculo. Se puede usar <em>Nombre forzado</em> para el enlace para mostrar siempre el mismo texto en cada entrada independientemente de cuál sea la url. Por ejemplo en una base de datos de escritores podríamos querer que la gente pusiera la dirección web de la página personal del autor, en ese caso le daría un aspecto homogéneo a la base que dicho enlace apareciera siempre con el título "Página personal".</li>
+<li><strong>Área de texto</strong>. Permite a los usuarios introducir un texto amplio y con formato (utilizando el editor HTML). Es posible determinar el tamaño del área de texto delimitando el ancho y el alto. Cuando se escriba más texto del que cabe en el área diseñada aparecerá automáticamente un scroll vertical.</li>
+</ul>
+<p>Conforme vamos añadiendo campos a la base los veremos listados bajo la pestaña campos. Desde aquí es posible eliminarlos y editarlos.</p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos07.png" /></p>
+<p>Por defecto las entradas en la base de datos se muestran por el orden en que van siendo añadidas desde la más reciente a la más antigua. Podemos cambiar este comportamiento desde el menú desplegable Campo de ordenación por defecto. Por ejemplo, si hemos creado una base de datos de pintores famosos podríamos decidir que las entradas se ordenarán por el nombre del autor seleccionado.</p>
+<p>Creada la actividad del curso, esta se visualiza de la siguiente manera:</p>
+<p>Las opciones que se visualizan para el docente una vez se escoge la base de datos, se muestran a continuación: </p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos08.png" /></p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos09.png" /></p>
+<ul>
+<li><strong>Ver lista</strong>:  muestra cada participación con todos los ítems que han sido ingresados por los usuarios.</li>
+<li><strong>Ver uno por uno</strong>: muestra la misma información ordenada una por pantalla, con todos los ítems ingresados en la base de datos.</li>
+<li><strong>Buscar:</strong> permite crear búsquedas avanzadas y generar filtros según los campos utilizados para el registro o ingreso de información a la base de datos.</li>
+<li><strong>Añadir entrada:</strong> permite a cualquier usuario del aula virtual, Profesor o estudiante, completar la información requerida en todos los campos.</li>
+<li><strong>Exportar:</strong> extraer la información que se ha registrado en la base de datos. Es posible elegir el formato de descarga y la cantidad y tipo de información.</li>
+<li><strong>Plantillas:</strong> relaciona plantillas disponibles que hayan sido creadas y campos creados.</li>
+<li><strong>Ajustes previos:</strong>  ofrece la alternativa de importar o exportar una actividad de base de datos.</li>
+</ul>
+<p>Desde el rol de estudiante, las opciones de la base de datos son las siguientes:</p>
+<p><img alt="" src="/img/recursos/basedatos/basedatos10.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../asistencia/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Asistencia" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Asistencia
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../bigbluebutton/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Big Blue Button" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Big Blue Button
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

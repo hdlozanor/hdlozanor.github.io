@@ -1,0 +1,1318 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://aulasvirtuales.udistrital.edu.co/cursos/configuracion/">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Configuracion - ManualDocente</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuracion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="ManualDocente" class="md-header__button md-logo" aria-label="ManualDocente" data-md-component="logo">
+      
+  <img src="../../img/logo1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ManualDocente
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuracion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ManualDocente" class="md-nav__button md-logo" aria-label="ManualDocente" data-md-component="logo">
+      
+  <img src="../../img/logo1.png" alt="logo">
+
+    </a>
+    ManualDocente
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Soporte
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Soporte" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Soporte
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/solicitudes/" class="md-nav__link">
+        Solicitudes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/mesaayuda/" class="md-nav__link">
+        Mesa de Ayuda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Cursos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Cursos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuracion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Configuracion
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ajustes" class="md-nav__link">
+    Ajustes
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajustes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descripcion-del-curso" class="md-nav__link">
+    Descripcion del curso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-curso" class="md-nav__link">
+    Formato de curso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apariencia" class="md-nav__link">
+    Apariencia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-y-subida" class="md-nav__link">
+    Archivos y subida
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rastro-de-finalizacion" class="md-nav__link">
+    Rastro de finalizacion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grupos" class="md-nav__link">
+    Grupos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcas" class="md-nav__link">
+    Marcas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grupos/" class="md-nav__link">
+        Grupos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matriculacion/" class="md-nav__link">
+        Matriculacion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reinicio/" class="md-nav__link">
+        Reinicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copiasseguridad/" class="md-nav__link">
+        Copias de seguridad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calificaciones/" class="md-nav__link">
+        Calificaciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Recursos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recursos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recursos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/archivo/" class="md-nav__link">
+        Archivo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/carpeta/" class="md-nav__link">
+        Carpeta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/etiqueta/" class="md-nav__link">
+        Etiqueta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/libro/" class="md-nav__link">
+        Libro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/pagina/" class="md-nav__link">
+        Pagina
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/url/" class="md-nav__link">
+        URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/asistencia/" class="md-nav__link">
+        Asistencia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/basedatos/" class="md-nav__link">
+        Base de datos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/bigbluebutton/" class="md-nav__link">
+        Big Blue Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/consulta/" class="md-nav__link">
+        Consulta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/h5p/" class="md-nav__link">
+        H5P
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Actividades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Actividades" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Actividades
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/foro/" class="md-nav__link">
+        Foro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/encuesta/" class="md-nav__link">
+        Encuesta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/cuestionario/" class="md-nav__link">
+        Cuestionarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/bancopreguntas/" class="md-nav__link">
+        Banco de preguntas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/geogebra/" class="md-nav__link">
+        Geogebra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/glosario/" class="md-nav__link">
+        Glosario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/herramientaexterna/" class="md-nav__link">
+        Herramienta externa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/hotspot/" class="md-nav__link">
+        Hotspot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/juegos/" class="md-nav__link">
+        Juegos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/leccion/" class="md-nav__link">
+        Leccion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/scorm/" class="md-nav__link">
+        SCORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/taller.md" class="md-nav__link">
+        Taller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/tarea/" class="md-nav__link">
+        Tarea
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actividades/wiki/" class="md-nav__link">
+        Wiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informes/informecurso/" class="md-nav__link">
+        Informes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Nosotros
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nosotros" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Nosotros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/planestic/" class="md-nav__link">
+        Planestic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/udistrital/" class="md-nav__link">
+        Udistrital
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/ingenieria.md" class="md-nav__link">
+        Ingenieria
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/mesaayuda/" class="md-nav__link">
+        Mesa de ayuda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/aulasvirtuales/" class="md-nav__link">
+        Aulas Virtuales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/edx/" class="md-nav__link">
+        EDX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nosotros/campusvirtual/" class="md-nav__link">
+        Campus virtual
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ajustes" class="md-nav__link">
+    Ajustes
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajustes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descripcion-del-curso" class="md-nav__link">
+    Descripcion del curso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-curso" class="md-nav__link">
+    Formato de curso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apariencia" class="md-nav__link">
+    Apariencia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-y-subida" class="md-nav__link">
+    Archivos y subida
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rastro-de-finalizacion" class="md-nav__link">
+    Rastro de finalizacion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grupos" class="md-nav__link">
+    Grupos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcas" class="md-nav__link">
+    Marcas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><strong>Cursos</strong></p>
+<h1 id="configuracion">Configuración</h1>
+<p>Para que un docente pueda cambiar las configuraciones de sus cursos en la plataforma Moodle tienen la opción <strong>“Editar Ajustes”</strong> que se ubica dentro de la <strong>“Administración del curso”.</strong> En la configuración de un curso, se puede ajustar detalles propios del curso, desde el nombre, fechas de inicio y finalización, visualizar u ocultar cursos, hasta elegir el tipo de formato que queremos usar para mostrar los recursos y actividades. </p>
+<p>En Editar Ajustes se tienen varios ítems para realizar la configuración del curso, los cuales son los que se observan en la imagen 15.</p>
+<p><img alt="" src="/img/cursos/configuracion/configuracion01.png" /></p>
+<p><em>Figura 15. Ítems de editar la configuración del curso</em></p>
+<h2 id="ajustes">Ajustes</h2>
+<p>Para revisar y ajustar esos ítems, debemos seguir la siguiente ruta:  </p>
+<pre><code>Administración de curso &gt; Editar ajustes
+</code></pre>
+<p><img alt="" src="/img/cursos/configuracion/configuracion02.png" /></p>
+<p><em>Figura 16. Editar ajustes</em></p>
+<p>Después de ingresar a la ruta que se indicó anteriormente se puede comenzar a realizar la configuración del curso en cada uno de los ítems, cada uno tiene una funcionalidad o genera un comportamiento en el curso que permite que los estudiantes tengan una mejor interacción dentro del curso.</p>
+<h3 id="general"><strong>General</strong></h3>
+<ul>
+<li><strong>General</strong>: En este ítem se puede agregar o editar el nombre del curso, al agregar un nombre de curso es importante agregar el nombre corto del curso, cambiar la categoría a la cual pertenece, cambiar la visibilidad de los cursos (mostrar u ocultar curso), además de ajustar tanto la fecha de inicio como fecha de finalización del curso. <img alt="" src="/img/cursos/configuracion/configuracion03.png" /></li>
+</ul>
+<p><em>Figura 17. Ítem General de Editar Ajustes de Curso</em></p>
+<h3 id="descripcion-del-curso"><strong>Descripcion del curso</strong></h3>
+<ul>
+<li><strong>Descripción del curso:</strong> Allí se puede agregar un pequeño resumen del curso que puede ser mostrado en la lista de cursos. Adicionalmente, se puede agregar un archivo que contenga dicho resumen.</li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion04.png" /></p>
+<p><em>Figura 18. Item Descripción de Editar Ajustes de Curso</em></p>
+<h3 id="formato-de-curso"><strong>Formato de curso</strong></h3>
+<ul>
+<li><strong>Formato de curso:</strong> En este apartado el docente podrá configurar la apariencia de cómo se visualiza el curso, podrá ajustar el formato de curso de preferencia o el que sea acorde a sus necesidades y forma de mostrar recursos y actividades. Podrá elegir entre varias opciones como Formato de temas, de botones, por semanas, pestañas, de actividad única, etc. Dependiendo del formato que se elija, se mostrarán opciones de configuración según el formato y sus características. </li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion05.png" /></p>
+<p><em>Figura 19. Ítem Formato de curso de Editar Ajustes de Curso</em></p>
+<p>Dependiendo del tipo de selección que realice en formato se habilitarán opciones adicionales para configurar la apariencia del curso, como es el caso de la opción de Temas en pestaña que, a diferencia del formato de temas, este habilita otras opciones como ocultar barra de pestañas, modo de visualización de la sección, si se desea usar resumen de tema como plantilla y si quiere mostrar un icono en enlaces de recursos en el resumen.</p>
+<p><img alt="" src="/img/cursos/configuracion/configuracion06.png" /></p>
+<p><em>Figura 20. Opción Temas en pestaña del ítem Formato de Curso</em></p>
+<p><img alt="" src="/img/cursos/configuracion/configuracion07.png" /></p>
+<p><em>Figura 21. Tema en pestaña del ítem Formato de Curso</em></p>
+<h3 id="apariencia"><strong>Apariencia</strong></h3>
+<ul>
+<li><strong>Apariencia</strong>: Este apartado se enfoca en darle una apariencia propia al curso, desde forzar a un idioma en específico (depende de los idiomas instalados), número de foros de anuncios, así como mostrar el libro de calificaciones a los estudiantes y mostrar informes de actividades.<img alt="" src="/img/cursos/configuracion/configuracion08.png" /></li>
+</ul>
+<p><em>Figura 22. Ítem Apariencia de curso</em></p>
+<h3 id="archivos-y-subida"><strong>Archivos y subida</strong></h3>
+<ul>
+<li><strong>Archivos y subida</strong>: El ítem solo permite hacer un cambio, el cual corresponde al tamaño máximo para los archivos cargados por los usuarios, en este caso está determinado a 2GB por el administrador. </li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion09.png" /></p>
+<p><em>Figura 23. Ítem Archivos y subidas</em>** </p>
+<h3 id="rastro-de-finalizacion"><strong>Rastro de finalizacion</strong></h3>
+<ul>
+<li><strong>Rastreo de finalización</strong>: Aquí solo se puede habilitar o deshabilitar el rastreo de grado de finalización. En caso de habilitarse, puede ajustarse y cambiarse las condiciones de finalización de actividades además de las condiciones de finalización del curso. Es útil para el rastreo del uso de la plataforma por parte de los estudiantes.</li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion10.png" /></p>
+<p><em>Figura 24. Ítem Rastreo de finalización</em></p>
+<h3 id="grupos"><strong>Grupos</strong></h3>
+<ul>
+<li><strong>Imagen X. Grupos</strong>: Este ítem se enfoca en la configuración de grupos, iniciando con el modo de grupos, donde se elige entre: No hay grupos, donde todos los estudiantes pertenecen a un gran grupo; grupos separados, cada estudiante solo puede ver su grupo y los demás son invisibles; y grupos visibles, donde cada estudiante trabaja en su grupo pero puede visualizar los otros grupos. El habilitar “forzar el modo de grupo” implica que se aplicará a todas las actividades, no las que se ajusten con el apartado de grupos. </li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion11.png" /></p>
+<p><em>Figura 25. Ítem Grupos y sus opciones</em></p>
+<h3 id="roles"><strong>Roles</strong></h3>
+<ul>
+<li><strong>Renombrar Rol</strong>: Se permite hacer cambios en los nombres de los roles sin alterar su configuración en otro curso y tampoco sin cambiar los permisos de los roles en general. Solo se permite cambiar los roles que se encuentren en el curso.</li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion12.png" /></p>
+<p><em>Figura 26. Ítem Renombrar roles</em></p>
+<h3 id="marcas"><strong>Marcas</strong></h3>
+<ul>
+<li><strong>Marcas</strong>: Son palabras claves o tags usadas dentro Moodle, estas se pueden ajustar en publicaciones en foros, cursos, actividades o recursos, etc. Los usuarios pueden hacer búsquedas con estos tags y se mostrarán todo lo relacionado que se ajuste a esta palabra clave. Para conocer más de su funcionamiento, dirigirse a https://docs.moodle.org/all/es/Marcas</li>
+</ul>
+<p><img alt="" src="/img/cursos/configuracion/configuracion13.png" /></p>
+<p><em>Figura 27. Ítem Marcas</em></p>
+<p><strong>NOTA:</strong> En la configuración de curso, se encuentran apartados que son obligatorios diligenciar o configurar y estos se encuentran marcados con un icono rojo con un signo de exclamación.</p>
+<p><img alt="" src="/img/cursos/configuracion/configuracion14.png" /></p>
+<p><em>Figura 28. Indicación de Moodle para los campos obligatorios.</em></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../../soporte/mesaayuda/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Mesa de Ayuda" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Mesa de Ayuda
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../grupos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Grupos" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Grupos
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>
