@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatiana & Hernán - Invitación de Boda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Section 1: Hero with Background and Countdown -->
+    <section id="inicio" class="hero-section">
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <picture>
+                    <source srcset="fotos/Car1-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car1.jpeg" alt="Foto 1">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car2-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car2.jpeg" alt="Foto 2">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car3-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car3.jpeg" alt="Foto 3">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car4-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car4.jpg" alt="Foto 4">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car5-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car5.jpeg" alt="Foto 5">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car6-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car6.jpg" alt="Foto 6">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car7-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car7.jpg" alt="Foto 7">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car8-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car8.jpg" alt="Foto 8">
+                </picture>
+            </div>
+            <div class="carousel-slide">
+                <picture>
+                    <source srcset="fotos/Car9-mobile.jpg" media="(max-width: 600px)">
+                    <img src="fotos/Car9.jpg" alt="Foto 9">
+                </picture>
+            </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+            <span class="dot" data-slide="6"></span>
+            <span class="dot" data-slide="7"></span>
+            <span class="dot" data-slide="8"></span>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+        <div class="names">
+            <div class="names-stack">
+                <span class="bride-name">Tatiana</span>
+                <span class="ampersand">&</span>
+                <span class="groom-name">Hernán</span>
+            </div>
+        </div>
+            <div class="bottom-section">
+                <div class="wedding-date">
+                    <h2>19 de Octubre / 2025</h2>
+                </div>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-item">
+                        <span id="months">0</span>
+                        <label>Meses</label>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="days">0</span>
+                        <label>Días</label>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">0</span>
+                        <label>Horas</label>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">0</span>
+                        <label>Minutos</label>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">0</span>
+                        <label>Segundos</label>
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="scroll-btn" onclick="scrollToSection('detalles')">
+                <i class="fas fa-chevron-down"></i>
+            </button> -->
+        </div>
+    </section>
+
+    <!-- Horizontal Floral Divider -->
+    <div class="horizontal-floral-divider">
+        <img src="fotos/floral-divider.png" alt="Divisor floral">
+    </div>
+
+    <!-- Section 2: Wedding Details -->
+    <section id="detalles" class="details-section section-with-floral-overlap">
+        <div class="section-floral-decoration full-right">
+            <img src="fotos/floral1.png" alt="Decoración floral">
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Detalles de la Celebración</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="details-content">
+                <div class="detail-card ceremony">
+                    <div class="card-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Ceremonia</h3>
+                    <p class="detail-date">Domingo, 19 de Octubre 2025</p>
+                    <p class="detail-time">3:00 PM</p>
+                    <p class="detail-location">Hacienda San Sebastian (Events)</p>
+                    <p class="detail-address">Subachoque, Cundinamarca</p>
+                </div>
+                <div class="detail-card reception">
+                    <div class="card-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Recepción</h3>
+                    <p class="detail-date">Domingo, 19 de Octubre 2025</p>
+                    <p class="detail-time">Inmediatamente después</p>
+                    <p class="detail-location">Hacienda San Sebastian (Events)</p>
+                    <p class="detail-address">Subachoque, Cundinamarca</p>
+                </div>
+            </div>
+            <button class="scroll-btn" onclick="scrollToSection('confirmacion')">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Horizontal Floral Divider -->
+    <div class="horizontal-floral-divider">
+        <img src="fotos/floral-divider.png" alt="Divisor floral">
+    </div>
+
+    <!-- Section 3: RSVP -->
+    <section id="confirmacion" class="rsvp-section section-with-floral-overlap">
+        <div class="section-floral-decoration full-right">
+            <img src="fotos/floral2.png" alt="Decoración floral">
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Confirma tu Asistencia</h2>
+                <div class="decorative-line"></div>
+                <!-- <p>Por favor confirma tu asistencia antes del 1 de Octubre</p> -->
+            </div>
+            <div class="rsvp-form-container">
+                <form id="rsvpForm" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="acompanantes">Número de Acompañantes</label>
+                        <select id="acompanantes" name="acompanantes">
+                            <option value="0">Solo yo</option>
+                            <option value="1">1 acompañante</option>
+                            <option value="2">2 acompañantes</option>
+                            <option value="3">3 acompañantes</option>
+                            <option value="4">4 acompañantes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="asistencia">¿Podrás acompañarnos?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="asistencia" value="si" required>
+                                <span class="radio-custom"></span>
+                                ¡Sí, estaré ahí!
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="asistencia" value="no" required>
+                                <span class="radio-custom"></span>
+                                No podré asistir
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje Especial (Opcional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Deja un mensaje para los novios..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-heart"></i>
+                        Confirmar Asistencia
+                    </button>
+                </form>
+            </div>
+            <button class="scroll-btn" onclick="scrollToSection('vestuario')">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Horizontal Floral Divider -->
+    <div class="horizontal-floral-divider">
+        <img src="fotos/floral-divider.png" alt="Divisor floral">
+    </div>
+
+    <!-- Section 4: Dress Code -->
+    <section id="vestuario" class="dress-code-section section-with-floral-overlap">
+        <div class="section-floral-decoration full-left">
+            <img src="fotos/floral3.png" alt="Decoración floral">
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Código de Vestuario</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="dress-code-content">
+                <div class="dress-code-card">
+                    <div class="dress-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Caballeros</h3>
+                    <ul>
+                        <li>Traje formal</li>
+                        <li>Camisa blanca</li>
+                        <li>Corbata</li>
+                        <li>Zapatos de vestir</li>
+                    </ul>
+                </div>
+                <div class="dress-code-card">
+                    <div class="dress-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Damas</h3>
+                    <ul>
+                        <li>Vestido elegante</li>
+                        <li>Evitar el color blanco</li>
+                        <li>Tacones cómodos</li>
+                        <li>Accesorios delicados</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dress-note">
+                <p><i class="fas fa-info-circle"></i> La celebración será al aire libre, considera el clima.</p>
+            </div>
+            <button class="scroll-btn" onclick="scrollToSection('ubicacion')">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Horizontal Floral Divider -->
+    <div class="horizontal-floral-divider">
+        <img src="fotos/floral-divider.png" alt="Divisor floral">
+    </div>
+
+    <!-- Section 5: Location with Google Maps -->
+    <section id="ubicacion" class="location-section section-with-floral-overlap">
+        <div class="section-floral-decoration full-left">
+            <img src="fotos/floral4.png" alt="Decoración floral">
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Ubicación</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Hacienda San Sebastian (Events)</h3>
+                    <p class="location-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Subachoque, Cundinamarca, Colombia
+                    </p>
+                    <div class="location-features">
+                        <div class="feature">
+                            <i class="fas fa-car"></i>
+                            <span>Parqueadero disponible</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <span>Catering incluido</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-music"></i>
+                            <span>Música en vivo</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Hacienda+San+Sebastian+Subachoque+Cundinamarca" target="_blank" class="directions-btn">
+                        <i class="fas fa-directions"></i>
+                        Cómo llegar
+                    </a>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31822.8!2d-74.1775!3d4.7350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e0a0a0a0a0%3A0x0!2sSubachoque%2C+Cundinamarca%2C+Colombia!5e0!3m2!1sen!2sco!4v1640000000000!5m2!1sen!2sco"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Tatiana & Hernán</h3>
+                    <p>Con amor esperamos celebrar contigo nuestro día especial</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Mobile Navigation -->
+    <nav class="bottom-nav">
+        <a href="#detalles" class="nav-item" data-section="detalles">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Fecha</span>
+        </a>
+        <a href="#ubicacion" class="nav-item" data-section="ubicacion">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ubicación</span>
+        </a>
+        <a href="#inicio" class="nav-item home-button active" data-section="inicio">
+            <i class="fas fa-church"></i>
+        </a>
+        <a href="#confirmacion" class="nav-item" data-section="confirmacion">
+            <i class="fas fa-check-circle"></i>
+            <span>Confirmar</span>
+        </a>
+        <a href="#vestuario" class="nav-item" data-section="vestuario">
+            <i class="fas fa-envelope"></i>
+            <span>Contacto</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
