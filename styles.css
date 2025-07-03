@@ -85,7 +85,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   .detail-image-frame.card-style,
   .detail-card.reception.card-style {
@@ -990,7 +990,7 @@ body.home-active .bottom-section {
 }
 .section-header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: -2.5rem;
 }
 .section-header h2 {
     font-family: 'Playfair Display', serif;
