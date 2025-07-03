@@ -10,6 +10,12 @@
 </head>
 <body>
 
+    <!-- Botón de música -->
+    <button id="music-toggle" class="music-btn" aria-label="Reproducir/Pausar música">
+        <i id="music-icon" class="fas fa-heart-pulse"></i>
+    </button>
+    <audio id="background-music" src="audio/amarte.mp3" loop></audio>
+
     <!-- Section 1: Hero with Background and Countdown -->
     <section id="inicio" class="hero-section">
         <!-- Image Carousel -->
@@ -92,33 +98,6 @@
                 <span class="groom-name">Hernán</span>
             </div>
         </div>
-            <div class="bottom-section">
-                <div class="wedding-date">
-                    <h2>19 de Octubre / 2025</h2>
-                </div>
-                <div id="countdown" class="countdown">
-                    <div class="countdown-item">
-                        <span id="months">0</span>
-                        <label>Meses</label>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="days">0</span>
-                        <label>Días</label>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="hours">0</span>
-                        <label>Horas</label>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="minutes">0</span>
-                        <label>Minutos</label>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="seconds">0</span>
-                        <label>Segundos</label>
-                    </div>
-                </div>
-            </div>
             <!-- <button class="scroll-btn" onclick="scrollToSection('detalles')">
                 <i class="fas fa-chevron-down"></i>
             </button> -->
@@ -126,6 +105,34 @@
     </section>
 
     <!-- Horizontal Floral Divider -->
+    <!-- Horizontal Floral Divider -->
+    <div class="bottom-section">
+        <div class="wedding-date">
+            <h2>19 de Octubre / 2025</h2>
+        </div>
+        <div id="countdown" class="countdown">
+            <div class="countdown-item">
+                <span id="months">0</span>
+                <label>Meses</label>
+            </div>
+            <div class="countdown-item">
+                <span id="days">0</span>
+                <label>Días</label>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">0</span>
+                <label>Horas</label>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">0</span>
+                <label>Minutos</label>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">0</span>
+                <label>Segundos</label>
+            </div>
+        </div>
+    </div>
     <div class="horizontal-floral-divider">
         <img src="fotos/floral-divider.png" alt="Divisor floral">
     </div>
@@ -137,36 +144,45 @@
         </div>
         <div class="container">
             <div class="section-header">
-                <h2>Detalles de la Celebración</h2>
+                <h2>Celebración</h2>
                 <div class="decorative-line"></div>
             </div>
             <div class="details-content">
-                <div class="detail-card ceremony">
-                    <div class="card-icon">
-                        <i class="fas fa-church"></i>
+                <div class="detail-image-frame card-style">
+                    <div class="image-zoom-wrapper">
+                        <img src="fotos/hacienda.png" alt="Hacienda San Sebastian" id="hacienda-img" class="hacienda-img" />
+                        <span class="hacienda-caption">Hacienda San Sebastian</span>
                     </div>
-                    <h3>Ceremonia</h3>
-                    <p class="detail-date">Domingo, 19 de Octubre 2025</p>
-                    <p class="detail-time">3:00 PM</p>
-                    <p class="detail-location">Hacienda San Sebastian (Events)</p>
-                    <p class="detail-address">Subachoque, Cundinamarca</p>
                 </div>
-                <div class="detail-card reception">
-                    <div class="card-icon">
-                        <i class="fas fa-glass-cheers"></i>
+                <div class="detail-card reception card-style">
+                    <div class="reception-card-inner">
+                        <div class="reception-icons">
+                            <i class="fas fa-church"></i>
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="reception-title">Ceremonia & Recepción</h3>
+                        <div class="reception-content">
+                            <div class="reception-detail-row left-align"><i class="fas fa-calendar-alt card-icon"></i><span class="reception-detail-text">Domingo, 19 de Octubre 2025</span></div>
+                            <div class="reception-detail-row left-align"><i class="fas fa-clock card-icon"></i><span class="reception-detail-text">3:00 PM</span></div>
+                            <div class="reception-detail-row left-align"><i class="fas fa-map-marker-alt card-icon"></i><span class="reception-detail-text">Hacienda San Sebastian</span></div>
+                            <div class="reception-detail-row left-align"><i class="fas fa-map card-icon"></i><span class="reception-detail-text">Subachoque, Cundinamarca</span></div>
+                        </div>
                     </div>
-                    <h3>Recepción</h3>
-                    <p class="detail-date">Domingo, 19 de Octubre 2025</p>
-                    <p class="detail-time">Inmediatamente después</p>
-                    <p class="detail-location">Hacienda San Sebastian (Events)</p>
-                    <p class="detail-address">Subachoque, Cundinamarca</p>
                 </div>
+<!-- Los estilos de la sección detalles han sido migrados a styles.css -->
             </div>
-            <button class="scroll-btn" onclick="scrollToSection('confirmacion')">
+            <!-- <button class="scroll-btn" onclick="scrollToSection('confirmacion')">
                 <i class="fas fa-chevron-down"></i>
-            </button>
+            </button> -->
         </div>
     </section>
+
+    <!-- Modal para visor de imagen -->
+    <div id="hacienda-modal" class="modal-image-viewer" style="display:none;">
+        <span class="close-modal" id="close-hacienda-modal">&times;</span>
+        <img class="modal-content" id="modal-hacienda-img" src="fotos/hacienda.png" alt="Hacienda San Sebastian" />
+        <span class="modal-caption" style="display:block; margin-top:1.1rem; text-align:center; font-family: 'Great Vibes', cursive; font-size: 2rem; color: #fffbe9; font-style: italic; text-shadow: 1px 1px 8px #a0522d;">Hacienda San Sebastian</span>
+    </div>
 
     <!-- Horizontal Floral Divider -->
     <div class="horizontal-floral-divider">
@@ -176,7 +192,7 @@
     <!-- Section 3: RSVP -->
     <section id="confirmacion" class="rsvp-section section-with-floral-overlap">
         <div class="section-floral-decoration full-right">
-            <img src="fotos/floral2.png" alt="Decoración floral">
+            <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
         <div class="container">
             <div class="section-header">
@@ -186,52 +202,66 @@
             </div>
             <div class="rsvp-form-container">
                 <form id="rsvpForm" class="rsvp-form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="acompanantes">Número de Acompañantes</label>
-                        <select id="acompanantes" name="acompanantes">
-                            <option value="0">Solo yo</option>
-                            <option value="1">1 acompañante</option>
-                            <option value="2">2 acompañantes</option>
-                            <option value="3">3 acompañantes</option>
-                            <option value="4">4 acompañantes</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="asistencia">¿Podrás acompañarnos?</label>
+                    <div class="form-group asistencia-group">
+                        <label for="asistencia" class="asistencia-label">¿Podrás acompañarnos?</label>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="asistencia" value="si" required>
-                                <span class="radio-custom"></span>
+                                <span class="radio-custom"><i class="fas fa-heart"></i></span>
                                 ¡Sí, estaré ahí!
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="asistencia" value="no" required>
-                                <span class="radio-custom"></span>
+                                <span class="radio-custom"><i class="fas fa-heart-broken"></i></span>
                                 No podré asistir
                             </label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="nombre-group" style="display:none;">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-group" id="telefono-group" style="display:none;">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group acomp-row" id="acompanantes-group" style="display:none; flex-direction: row; gap: 1rem; align-items: flex-end;">
+                        <div class="acompanantes-row">
+                            <div class="acompanante-col">
+                                <label for="adultos">Adultos</label>
+                                <select id="adultos" name="adultos">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            <div class="acompanante-col">
+                                <label for="ninos">Niños</label>
+                                <select id="ninos" name="ninos">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
                         <label for="mensaje">Mensaje Especial (Opcional)</label>
                         <textarea id="mensaje" name="mensaje" rows="4" placeholder="Deja un mensaje para los novios..."></textarea>
-                    </div>
+                    </div> -->
                     <button type="submit" class="submit-btn">
                         <i class="fas fa-heart"></i>
                         Confirmar Asistencia
                     </button>
                 </form>
             </div>
-            <button class="scroll-btn" onclick="scrollToSection('vestuario')">
+            <!-- <button class="scroll-btn" onclick="scrollToSection('vestuario')">
                 <i class="fas fa-chevron-down"></i>
-            </button>
+            </button> -->
         </div>
     </section>
 
@@ -242,8 +272,8 @@
 
     <!-- Section 4: Dress Code -->
     <section id="vestuario" class="dress-code-section section-with-floral-overlap">
-        <div class="section-floral-decoration full-left">
-            <img src="fotos/floral3.png" alt="Decoración floral">
+        <div class="section-floral-decoration full-right">
+            <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
         <div class="container">
             <div class="section-header">
@@ -279,9 +309,9 @@
             <div class="dress-note">
                 <p><i class="fas fa-info-circle"></i> La celebración será al aire libre, considera el clima.</p>
             </div>
-            <button class="scroll-btn" onclick="scrollToSection('ubicacion')">
+            <!-- <button class="scroll-btn" onclick="scrollToSection('ubicacion')">
                 <i class="fas fa-chevron-down"></i>
-            </button>
+            </button> -->
         </div>
     </section>
 
@@ -292,8 +322,8 @@
 
     <!-- Section 5: Location with Google Maps -->
     <section id="ubicacion" class="location-section section-with-floral-overlap">
-        <div class="section-floral-decoration full-left">
-            <img src="fotos/floral4.png" alt="Decoración floral">
+        <div class="section-floral-decoration full-right">
+            <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
         <div class="container">
             <div class="section-header">
@@ -315,10 +345,6 @@
                         <div class="feature">
                             <i class="fas fa-utensils"></i>
                             <span>Catering incluido</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-music"></i>
-                            <span>Música en vivo</span>
                         </div>
                     </div>
                     <a href="https://maps.google.com/?q=Hacienda+San+Sebastian+Subachoque+Cundinamarca" target="_blank" class="directions-btn">
@@ -371,8 +397,8 @@
             <span>Confirmar</span>
         </a>
         <a href="#vestuario" class="nav-item" data-section="vestuario">
-            <i class="fas fa-envelope"></i>
-            <span>Contacto</span>
+            <i class="fas fa-shirt"></i>
+            <span>Codigo</span>
         </a>
     </nav>
 
@@ -380,6 +406,62 @@
     <script>
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        // Música de fondo
+        const music = document.getElementById('background-music');
+        const musicBtn = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+        let isPlaying = false;
+
+        function playMusic() {
+            music.play();
+            isPlaying = true;
+            musicIcon.classList.remove('fa-heart');
+            musicIcon.classList.add('fa-heart-pulse');
+        }
+        function pauseMusic() {
+            music.pause();
+            isPlaying = false;
+            musicIcon.classList.remove('fa-heart-pulse');
+            musicIcon.classList.add('fa-heart');
+        }
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            }
+        });
+        // Opcional: inicia la música automáticamente en desktop (al primer click)
+        document.addEventListener('DOMContentLoaded', function() {
+            musicIcon.classList.add('fa-heart');
+        });
+        // Visor de imagen para la hacienda
+        const haciendaImg = document.getElementById('hacienda-img');
+        const haciendaModal = document.getElementById('hacienda-modal');
+        const modalImg = document.getElementById('modal-hacienda-img');
+        const closeModal = document.getElementById('close-hacienda-modal');
+        if (haciendaImg && haciendaModal && modalImg && closeModal) {
+            haciendaImg.addEventListener('click', function() {
+                haciendaModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            closeModal.addEventListener('click', function() {
+                haciendaModal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+            haciendaModal.addEventListener('click', function(e) {
+                if (e.target === haciendaModal) {
+                    haciendaModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && haciendaModal.style.display === 'flex') {
+                    haciendaModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
         }
     </script>
 </body>

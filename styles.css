@@ -1,3 +1,630 @@
+/* --- Estilos migrados desde el bloque <style> de index.html para la sección detalles --- */
+/* Limpieza: Se eliminan duplicados, se mantiene solo la versión más específica y responsiva de cada regla para la sección detalles */
+.image-zoom-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hacienda-img {
+  cursor: zoom-in;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+.hacienda-caption {
+  display: block;
+  margin-top: 1.1rem;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #a0522d;
+  font-style: italic;
+}
+.reception-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 340px;
+}
+.reception-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.reception-icons i {
+  font-size: 3rem;
+  color: #c0392b;
+}
+.reception-title {
+  margin-bottom: 1.1rem;
+  margin-top: 0;
+}
+.reception-content {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.reception-detail-row.left-align {
+  margin-bottom: 0.9rem;
+}
+.reception-detail-row.left-align:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+/* Responsive layout for details section */
+.details-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+@media (max-width: 900px) {
+  .details-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  .detail-image-frame.card-style,
+  .detail-card.reception.card-style {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin: 0 0 1.2rem 0;
+    padding: 0.7rem 0 0.7rem 0;
+    box-sizing: border-box;
+    overflow: visible;
+    border-radius: 12px;
+  }
+}
+  .detail-image-frame.card-style,
+  .detail-card.reception.card-style {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 1.2rem 0;
+    padding: 0.7rem 0 0.7rem 0;
+    box-sizing: border-box;
+    overflow: visible;
+    border-radius: 12px;
+  }
+  .reception-card-inner {
+    min-height: 0;
+    padding: 0;
+  }
+  .reception-content {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+  .hacienda-img {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hacienda-caption {
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+  }
+  .reception-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.9rem;
+  }
+  .reception-icons i {
+    font-size: 2.3rem;
+  }
+  .reception-detail-row.left-align {
+    font-size: 1.15rem;
+    margin-bottom: 0.1rem;
+  }
+}
+/* UNIFICACIÓN Y REFORZAMIENTO DEL MENÚ INFERIOR */
+.bottom-nav {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  z-index: 20000 !important;
+  height: 65px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important;
+  border-top: 1px solid rgba(255,255,255,0.2) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  pointer-events: auto !important;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  position: static !important;
+  height: 100vh !important;
+}
+
+/* Ajuste de altura para secciones principales en mobile: permite crecer y no tapa el menú */
+.details-section,
+.rsvp-section,
+.dress-code-section,
+.location-section {
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+/* Alineación izquierda solo para las filas de datos principales en el card de recepción */
+.reception-detail-row.left-align {
+    justify-content: flex-start;
+    text-align: left;
+}
+/* El texto dentro de la fila también a la izquierda */
+.reception-detail-row.left-align .reception-detail-text {
+    text-align: left;
+    width: auto;
+}
+/* --- Card frame y estilo para el card de Ceremonia & Recepción --- */
+/* --- Card frame y estilo para el card de Ceremonia & Recepción --- */
+/* --- Card frame y estilo para el card de Ceremonia & Recepción --- */
+/* Card frame y estilo para el card de Ceremonia & Recepción */
+.detail-card.reception.card-style {
+    background: #fff url('fotos/frame.jpg') center center no-repeat;
+    background-size: cover;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 10px 40px rgba(192,57,43,0.18), 0 2px 0 #e74c3c22 inset;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    margin: 1rem 0 1rem 0;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s;
+}
+/* Título "Ceremonia & Recepción" con fuente Great Vibes */
+/* Título "Ceremonia & Recepción" con fuente Great Vibes centrado */
+.reception-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #c0392b;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+/* Alineación izquierda para el contenido del card de recepción */
+/* Contenido centrado dentro del card de recepción */
+.reception-content {
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    align-items: center;
+}
+/* Íconos del card de recepción con color de título */
+.reception-content .card-icon {
+    color: #c0392b;
+    margin-right: 0.7rem;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+/* Ajuste para filas de datos en el card de recepción */
+.reception-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+/* Eliminado bloque duplicado de .bottom-nav en mobile para evitar conflictos */
+    .detail-card.reception.card-style {
+        width: 80vw !important;
+        max-width: 98vw !important;
+        min-width: 0 !important;
+        margin: 0 0 1rem 0 !important;
+        padding: 1.1rem 0.5rem 0.5rem 0.5rem !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+    }
+    .reception-title {
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+    .reception-content {
+        width: 80% !important;
+        align-items: flex-start !important;
+        gap: 0.1rem !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .reception-detail-row.left-align {
+        justify-content: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    .reception-detail-row .reception-detail-text {
+        word-break: break-word !important;
+        white-space: normal !important;
+        font-size: 1.1rem !important;
+    }
+
+/* --- Título elegante para Ceremonia & Recepción --- */
+.reception-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #c0392b;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Contenido alineado a la izquierda dentro del card de recepción */
+/* Contenido alineado a la izquierda dentro del card de recepción */
+.reception-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Íconos de detalles en el card de recepción */
+.reception-content .card-icon,
+.reception-content i {
+    color: #c0392b !important;
+    font-size: 2.3rem;
+    margin: 0 auto 0.7rem auto;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Ajuste para filas de datos con ícono y texto */
+/* Ajuste para filas de datos con ícono y texto centrados en el card de recepción */
+/* Ajuste para filas de datos con ícono y texto centrados en el card de recepción */
+/* Ajuste para filas de datos con ícono y texto centrados en el card de recepción */
+.reception-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    justify-content: flex-start;
+    width: 80%;
+    max-width: 400px;
+    min-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+/* Centrado de íconos en el card de recepción */
+/* Centrado vertical exacto de íconos en filas de recepción */
+/* Mejor alineación vertical de íconos y texto en filas de recepción */
+.reception-detail-row .card-icon,
+.reception-detail-row i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.2rem;
+    text-align: center;
+    font-size: 1.35rem;
+    line-height: 1;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    top: 1px;
+}
+.reception-detail-row .reception-detail-text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.3;
+    position: relative;
+    top: 1px;
+    text-align: left;
+    min-width: 0;
+    flex: 1;
+    padding-left: 0.2rem;
+}
+@media (max-width: 900px) {
+    .detail-card.reception.card-style {
+        max-width: 98vw;
+        min-width: 0;
+        width: 100vw;
+        margin: 0 auto 1rem auto;
+        padding: 1.2rem;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+}
+/* --- Modal para visor de imagen de la hacienda --- */
+.modal-image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 20000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.3s;
+}
+.modal-image-viewer .modal-content {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    border: 4px solid #fff;
+    background: #fff;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+    display: block;
+}
+.modal-image-viewer .modal-caption {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    text-align: center;
+    text-shadow: 1px 1px 6px #000;
+    margin-bottom: 0.5rem;
+}
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 20001;
+    text-shadow: 0 2px 8px #000;
+    transition: color 0.2s;
+}
+.close-modal:hover {
+    color: #e74c3c;
+}
+.acompanantes-full {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #e74c3c;
+    transition: color 0.2s;
+}
+.radio-option input[type="radio"] {
+    display: none;
+}
+.radio-option input[type="radio"]:checked + .radio-custom i.fa-heart {
+    color: #e74c3c;
+    text-shadow: 0 0 6px #e74c3c44;
+}
+.radio-option input[type="radio"]:checked + .radio-custom i.fa-heart-broken {
+    color: #c0392b;
+    text-shadow: 0 0 6px #c0392b44;
+}
+.acompanantes-titulo {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.acompanantes-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.2rem;
+    width: 100%;
+    margin-bottom: 0.7rem;
+}
+.acompanante-col {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+    min-width: 120px;
+}
+.acompanante-col label {
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    width: 100%;
+}
+.acompanante-col select,
+.acompanante-col input[type="text"],
+.acompanante-col input[type="tel"] {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    display: block;
+    font-size: 1rem;
+    padding: 0.4rem 0.2rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+@media (max-width: 900px) {
+    .acompanantes-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+    .acompanante-col {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .acompanante-col select,
+    .acompanante-col input[type="text"],
+    .acompanante-col input[type="tel"] {
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .acompanantes-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+    .acompanante-col {
+        max-width: 100%;
+    }
+    .acompanante-col select {
+        max-width: 100%;
+    }
+}
+.acompanantes-titulo {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+/* Centrado para pregunta de asistencia */
+.asistencia-group {
+    text-align: center;
+}
+.asistencia-label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+/* Centrado y ancho completo para Numero de Acompañantes */
+.acompanantes-full {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+.acompanantes-full label {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+.acompanantes-full select {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+}
+.acompanantes-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 0.7rem;
+}
+@media (max-width: 768px) {
+    .acompanantes-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+    .acompanantes-full select {
+        max-width: 100%;
+    }
+}
+/* RSVP acompañantes/adultos/niños en fila */
+.acomp-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-end;
+}
+@media (max-width: 768px) {
+    .acomp-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+}
+/* Botón de música en la esquina superior izquierda */
+.music-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.music-btn:hover {
+    background: #ffeaea;
+}
+.music-btn i {
+    color: #e74c3c;
+    font-size: 2rem;
+    transition: color 0.2s;
+}
 /* Reset and Defaults */
 * {
     margin: 0;
@@ -8,24 +635,10 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #fff;
     color: #333;
+    padding-bottom: 130px; /* Default: espacio para bottom-section + bottom-nav */
 }
 
-/* Bottom Mobile Navigation */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px 0;
-    height: 65px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+/* Eliminada la regla global duplicada y débil de .bottom-nav */
 
 .nav-item {
     display: flex;
@@ -251,6 +864,10 @@ body {
 }
 
 /* Date and countdown at page bottom - desktop (only on home page) */
+
+/* Refuerzo: la barra solo se muestra si el body tiene home-active */
+
+/* Por defecto, la barra está oculta SIEMPRE */
 .bottom-section {
     position: fixed;
     bottom: 65px; /* Just above bottom navigation */
@@ -266,15 +883,23 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     z-index: 999;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show bottom section only when home page is active */
-.home-active .bottom-section {
-    opacity: 1;
-    visibility: visible;
+
+/* Por defecto, la barra está oculta SIEMPRE */
+.bottom-section {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+body.home-active .bottom-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 .wedding-date {
@@ -335,12 +960,17 @@ body {
 
 /* Details Section */
 .details-section {
-    padding: 5rem 0;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
     background-image: url('fotos/pareja1.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .details-section::before {
@@ -403,14 +1033,165 @@ body {
     color: #333;
 }
 
+/* --- Marco decorativo usando imagen real de frame antiguo --- */
+.detail-image-frame {
+    background: url('fotos/frame.jpg') center center no-repeat;
+    background-size: cover;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 10px 40px rgba(192,57,43,0.18), 0 2px 0 #e74c3c22 inset;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 420px;
+    min-width: 260px;
+    margin: 1rem 0 1rem 1rem;
+    position: relative;
+    overflow: hidden;
+    transform: none;
+}
+.detail-image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    border: 2px solid #fff;
+    background: #f8f8f8;
+}
+.detail-image-frame::before,
+.detail-image-frame::after {
+    display: none !important;
+}
+@media (max-width: 900px) {
+    .detail-image-frame {
+        max-width: 95vw;
+        min-width: 0;
+        width: 100%;
+        margin: 0 auto 1rem auto;
+        padding: 1.2rem;
+    }
+}
+/* Layout horizontal en desktop para detalles */
+.details-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Uniformiza altura de los dos cards en desktop */
+@media (min-width: 769px) {
+    .details-content > .detail-image-frame.card-style,
+    .details-content > .detail-card.reception.card-style {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        min-height: 420px;
+        height: auto;
+        width: 48%;
+        box-sizing: border-box;
+        margin: 1rem 0 1rem 0 !important;
+        vertical-align: top;
+    }
+    .details-content {
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Elimina márgenes laterales asimétricos */
+    .detail-image-frame.card-style,
+    .detail-card.reception.card-style {
+        margin: 1rem 0 1rem 0 !important;
+    }
+}
+
+.detail-card.reception {
+    flex: 1 1 0;
+    max-width: 480px;
+    min-width: 260px;
+    margin: 1rem 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Responsive para el card de recepción */
+@media (max-width: 900px) {
+    .reception-title {
+        font-size: 2rem;
+    }
+    .reception-content {
+        gap: 0.7rem;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .reception-content .card-icon,
+    .reception-content i {
+        font-size: 2rem;
+        margin: 0 auto 0.7rem auto;
+        display: block;
+        text-align: center;
+    }
+    .reception-detail-row {
+        justify-content: flex-start;
+        gap: 0.5rem;
+        width: 95%;
+        max-width: 98vw;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .reception-detail-row .reception-detail-text {
+        text-align: left;
+        padding-left: 0.2rem;
+    }
+}
+@media (max-width: 900px) {
+    .details-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    .detail-image-frame {
+        max-width: 98vw;
+        min-width: 0;
+        width: 100%;
+        margin: 0 auto 1rem auto;
+        transform: rotate(-2deg);
+    }
+    .detail-card.reception {
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0;
+        margin: 0 0 1rem 0;
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 1.1rem 0.5rem 1.3rem 0.5rem;
+    }
+    }
+
 /* RSVP Section */
 .rsvp-section {
-    padding: 5rem 0;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
     background-image: url('fotos/pareja2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .rsvp-section::before {
@@ -485,12 +1266,17 @@ body {
 
 /* Dress Code Section */
 .dress-code-section {
-    padding: 5rem 0;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
     background-image: url('fotos/pareja3.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .dress-code-section::before {
@@ -540,12 +1326,17 @@ body {
 
 /* Location Section */
 .location-section {
-    padding: 5rem 0;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
     background-image: url('fotos/floral3.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .location-section::before {
@@ -653,7 +1444,7 @@ body {
 .horizontal-floral-divider img {
     display: none;
 }
-
+ 
 /* Section Decorative Florals - Full Side Coverage */
 .section-floral-decoration {
     position: absolute;
@@ -715,13 +1506,14 @@ body {
 /* Container */
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: auto;
+    padding: 0 0rem;
 }
 
-/* Add padding to body to account for bottom navigation and date/timer */
-body {
-    padding-bottom: 130px; /* Space for both timer section and navigation */
+
+/* Ajuste dinámico de padding-bottom según si la barra de fecha está visible (home-active) */
+body:not(.home-active) {
+    padding-bottom: 65px !important; /* Solo espacio para el menú cuando NO está la barra de fecha */
 }
 
 /* --- Escritorio: todo centrado en una línea --- */
@@ -781,6 +1573,12 @@ body {
         z-index: 10;
     }
     
+    .container {
+    max-width: 1200px;
+    margin: 10%;
+    padding: 0 0rem;
+    }
+
     /* Names at top - centered */
     .names {
         display: flex;
@@ -979,4 +1777,93 @@ html {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+
+@media (max-width: 768px) {
+  .details-section,
+  .rsvp-section,
+  .dress-code-section,
+  .location-section {
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body.home-active {
+    padding-bottom: 130px !important;
+  }
+  body:not(.home-active) {
+    padding-bottom: 65px !important;
+  }
+  .bottom-section {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 65px;
+    z-index: 9999;
+  }
+  .bottom-nav {
+    z-index: 20000 !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* --- Card frame y caption solo para la imagen de la hacienda --- */
+.detail-image-frame.card-style {
+    background: #fff url('fotos/frame.jpg') center center no-repeat;
+    background-size: cover;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 10px 40px rgba(192,57,43,0.18), 0 2px 0 #e74c3c22 inset;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 480px;
+    min-width: 260px;
+    margin: 1rem 1rem 1rem 0;
+    position: relative;
+    overflow: hidden;
+    transform: none;
+}
+.detail-image-frame.card-style img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    border: 2px solid #fff;
+    background: #f8f8f8;
+}
+.detail-image-frame.card-style::before,
+.detail-image-frame.card-style::after {
+    display: none !important;
+}
+@media (max-width: 900px) {
+  /* Unificación responsiva para ambos cards de detalles */
+  .detail-image-frame.card-style,
+  .detail-card.reception.card-style {
+    width: 80vw;
+    max-width: 98vw;
+    min-width: 0;
+    margin: 0 auto 1.2rem auto;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    box-sizing: border-box;
+    overflow: visible;
+    border-radius: 28px;
+  }
+  .details-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 80vw;
+    box-sizing: border-box;
+  }
 }

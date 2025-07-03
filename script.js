@@ -1,3 +1,36 @@
+// Lógica para mostrar/ocultar campos del formulario RSVP
+// Adaptado para la nueva estructura: nombre y teléfono individuales
+
+document.addEventListener('DOMContentLoaded', function() {
+    const radioSi = document.querySelector('input[name="asistencia"][value="si"]');
+    const radioNo = document.querySelector('input[name="asistencia"][value="no"]');
+    const acompGroup = document.getElementById('acompanantes-group');
+    const nombreGroup = document.getElementById('nombre-group');
+    const telefonoGroup = document.getElementById('telefono-group');
+    //const mensajeGroup = document.querySelector('textarea#mensaje').parentElement;
+
+    function updateForm() {
+        if (radioSi.checked) {
+            nombreGroup.style.display = '';
+            telefonoGroup.style.display = '';
+            acompGroup.style.display = '';
+            //mensajeGroup.style.display = '';
+        } else if (radioNo.checked) {
+            nombreGroup.style.display = '';
+            telefonoGroup.style.display = '';
+            acompGroup.style.display = 'none';
+            //mensajeGroup.style.display = '';
+        } else {
+            nombreGroup.style.display = 'none';
+            telefonoGroup.style.display = 'none';
+            acompGroup.style.display = 'none';
+            //mensajeGroup.style.display = 'none';
+        }
+    }
+    radioSi.addEventListener('change', updateForm);
+    radioNo.addEventListener('change', updateForm);
+    updateForm();
+});
 document.addEventListener('DOMContentLoaded', function () {
     // Countdown Timer
     const weddingDate = new Date('October 19, 2025 15:00:00').getTime();
@@ -122,15 +155,31 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
-            
+
             // Remove active class from all nav items
             navItems.forEach(nav => nav.classList.remove('active'));
-            
+
             // Add active class to clicked item
             this.classList.add('active');
-            
+
             // Scroll to section
             scrollToSection(targetId);
+
+            // --- NUEVO: Forzar actualización de barra inferior según sección ---
+            const body = document.body;
+            // Elimina cualquier clase *-active
+            body.className = body.className
+                .split(' ')
+                .filter(c => !c.endsWith('-active'))
+                .join(' ');
+            if (targetId) {
+                body.classList.add(targetId + '-active');
+            }
+            if (targetId === 'inicio') {
+                body.classList.add('home-active');
+            } else {
+                body.classList.remove('home-active');
+            }
         });
     });
 
@@ -154,6 +203,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Show/hide bottom date/timer section based on current page
         const body = document.body;
+        // Elimina cualquier clase *-active
+        body.className = body.className
+            .split(' ')
+            .filter(c => !c.endsWith('-active'))
+            .join(' ');
+        // Agrega solo la clase activa correspondiente
+        if (current) {
+            body.classList.add(current + '-active');
+        }
+        // Solo agrega la clase home-active si estamos en la sección con id="inicio"
         if (current === 'inicio') {
             body.classList.add('home-active');
         } else {
@@ -168,3 +227,54 @@ document.addEventListener('DOMContentLoaded', function () {
     updateActiveNav();
 
 });
+// --- BLOQUEO DE SCROLL Y MOVIMIENTO LIBRE EN MÓVILES (mejorado) ---
+(function() {
+    function isMobile() {
+        return window.innerWidth <= 900 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    function preventScroll(e) {
+        if (isMobile()) {
+            e.preventDefault();
+        }
+    }
+    function lockScroll() {
+        if (isMobile()) {
+            document.body.style.overflow = 'hidden';
+            // NO usar position: fixed para permitir scrollIntoView
+        }
+    }
+    function unlockScroll() {
+        document.body.style.overflow = '';
+    }
+    // Bloquea scroll táctil y arrastre manual
+    window.addEventListener('touchmove', preventScroll, { passive: false });
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    lockScroll();
+    window.addEventListener('resize', function() {
+        if (isMobile()) lockScroll(); else unlockScroll();
+    });
+
+    // Navegación solo por menú principal
+    document.querySelectorAll('.bottom-nav .nav-item').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            var href = item.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                var section = document.querySelector(href);
+                if (section) {
+                    unlockScroll(); // Permite scroll programático
+                    setTimeout(function() {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(lockScroll, 700); // Vuelve a bloquear después del scroll
+                    }, 10);
+                }
+            }
+        });
+    });
+
+    // Evita scroll con teclado en móviles
+    window.addEventListener('keydown', function(e) {
+        if (isMobile() && ['ArrowUp','ArrowDown','PageUp','PageDown',' '].includes(e.key)) {
+            e.preventDefault();
+        }
+    });
+})();
