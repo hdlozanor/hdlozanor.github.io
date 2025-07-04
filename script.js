@@ -6,23 +6,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const radioNo = document.querySelector('input[name="asistencia"][value="no"]');
     const acompGroup = document.getElementById('acompanantes-group');
     const nombreGroup = document.getElementById('nombre-group');
-    const telefonoGroup = document.getElementById('telefono-group');
+    // const telefonoGroup = document.getElementById('telefono-group');
     //const mensajeGroup = document.querySelector('textarea#mensaje').parentElement;
 
     function updateForm() {
         if (radioSi.checked) {
             nombreGroup.style.display = '';
-            telefonoGroup.style.display = '';
+            // telefonoGroup.style.display = '';
             acompGroup.style.display = '';
             //mensajeGroup.style.display = '';
         } else if (radioNo.checked) {
             nombreGroup.style.display = '';
-            telefonoGroup.style.display = '';
+            // telefonoGroup.style.display = '';
             acompGroup.style.display = 'none';
             //mensajeGroup.style.display = '';
         } else {
             nombreGroup.style.display = 'none';
-            telefonoGroup.style.display = 'none';
+            // telefonoGroup.style.display = 'none';
             acompGroup.style.display = 'none';
             //mensajeGroup.style.display = 'none';
         }
@@ -122,29 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         appearOnScroll.observe(fader);
     });
 
-    // RSVP Form handling
-    const rsvpForm = document.getElementById('rsvpForm');
-    if (rsvpForm) {
-        rsvpForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(rsvpForm);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            
-            // Show confirmation message
-            alert('¡Gracias por confirmar tu asistencia! Hemos recibido tu información.');
-            
-            // Reset form
-            rsvpForm.reset();
-            
-            // In a real application, you would send this data to a server
-            console.log('RSVP Data:', data);
-        });
-    }
+    // RSVP Form handling (migrated to inline script in index.html)
 
     // Bottom navigation functionality
     const navItems = document.querySelectorAll('.nav-item');

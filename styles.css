@@ -287,7 +287,7 @@ html, body {
     .reception-detail-row .reception-detail-text {
         word-break: break-word !important;
         white-space: normal !important;
-        font-size: 1.1rem !important;
+        font-size: 1.05rem !important;
     }
 
 /* --- Título elegante para Ceremonia & Recepción --- */
@@ -991,6 +991,8 @@ body.home-active .bottom-section {
 .section-header {
     text-align: center;
     margin-bottom: -3rem;
+    position: relative;
+    z-index: 20;
 }
 .section-header h2 {
     font-family: 'Playfair Display', serif;
@@ -1000,7 +1002,7 @@ body.home-active .bottom-section {
 .decorative-line {
     width: 100px;
     height: 3px;
-    background-color: #c0392b;
+    /* background-color: #c0392b; */
     margin: 1rem auto;
 }
 .details-content {
@@ -1208,6 +1210,7 @@ body.home-active .bottom-section {
 .rsvp-section .container {
     position: relative;
     z-index: 10;
+    padding-top: 2.5rem;
 }
 .rsvp-form-container {
     max-width: 600px;
@@ -1873,6 +1876,8 @@ html {
     margin-bottom: 1.1rem !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
+    position: relative !important;
+    z-index: 20 !important;
   }
   .section-header h2 {
     font-size: 1.3rem !important;
@@ -1891,6 +1896,9 @@ html {
     padding: 0 !important;
     box-sizing: border-box !important;
     overflow: visible !important;
+  }
+  .details-section .container {
+    padding-top: 1.2rem !important;
   }
   .detail-image-frame.card-style,
   .detail-card.reception.card-style {
