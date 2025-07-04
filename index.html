@@ -428,6 +428,26 @@
       });
     }
 
+    // --- Mantener scroll en la sección de confirmación en móviles ---
+    function scrollToConfirmacionIfNeeded() {
+      const confirmacionSection = document.getElementById('confirmacion');
+      if (confirmacionSection) {
+        confirmacionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    // Detectar blur en cualquier input del formulario
+    if (rsvpForm) {
+      const inputs = rsvpForm.querySelectorAll('input, select, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          // Solo en pantallas pequeñas (responsive)
+          if (window.innerWidth <= 600) {
+            setTimeout(scrollToConfirmacionIfNeeded, 100); // Espera a que el teclado desaparezca
+          }
+        });
+      });
+    }
+
     if (rsvpForm) {
       rsvpForm.addEventListener('submit', function(e) {
         e.preventDefault();
