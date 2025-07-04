@@ -428,23 +428,37 @@
       });
     }
 
-    // --- Mantener scroll en la sección de confirmación en móviles ---
-    function scrollToConfirmacionIfNeeded() {
+    // --- Mantener scroll en la sección de confirmación en móviles (mejorado para Android) ---
+    function scrollToConfirmacionIfNeeded(force) {
       const confirmacionSection = document.getElementById('confirmacion');
       if (confirmacionSection) {
-        confirmacionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        confirmacionSection.scrollIntoView({ behavior: force ? 'auto' : 'smooth', block: 'start' });
+        // Hack extra: volver a forzar el scroll tras 200ms por si el navegador lo sobrescribe
+        setTimeout(() => {
+          confirmacionSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }, 200);
       }
     }
-    // Detectar blur en cualquier input del formulario
     if (rsvpForm) {
       const inputs = rsvpForm.querySelectorAll('input, select, textarea');
+      // Forzar scroll al perder foco (blur) y al salir de input (focusout)
       inputs.forEach(input => {
         input.addEventListener('blur', function() {
-          // Solo en pantallas pequeñas (responsive)
           if (window.innerWidth <= 600) {
-            setTimeout(scrollToConfirmacionIfNeeded, 100); // Espera a que el teclado desaparezca
+            setTimeout(() => scrollToConfirmacionIfNeeded(false), 100);
           }
         });
+        input.addEventListener('focusout', function() {
+          if (window.innerWidth <= 600) {
+            setTimeout(() => scrollToConfirmacionIfNeeded(true), 120);
+          }
+        });
+      });
+      // También al hacer submit, para asegurar que el scroll no se pierda
+      rsvpForm.addEventListener('submit', function() {
+        if (window.innerWidth <= 600) {
+          setTimeout(() => scrollToConfirmacionIfNeeded(true), 150);
+        }
       });
     }
 
