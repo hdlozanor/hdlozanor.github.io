@@ -29,19 +29,20 @@
     z-index: 10;
     background: #fff;
     padding-bottom: 70px;
-    overflow: hidden;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
   }
   .main-section.active > .container {
-    max-height: calc(100dvh - 70px);
-    overflow-y: auto !important;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    height: 100%;
+    max-height: none;
+    overflow: visible !important;
+    height: auto;
+    min-height: 0;
     width: 100vw;
     box-sizing: border-box;
     background: transparent;
-    padding-bottom: 24px; /* Espacio para el menú inferior */
+    padding-bottom: 24px;
     touch-action: pan-y;
     position: relative;
     z-index: 11;
