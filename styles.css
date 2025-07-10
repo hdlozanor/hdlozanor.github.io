@@ -20,9 +20,8 @@
     flex-direction: column;
   }
   .main-section.active {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    display: block;
+    height: 100dvh;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -30,11 +29,10 @@
     z-index: 10;
     background: #fff;
     padding-bottom: 70px;
+    overflow: hidden;
   }
   .main-section.active > .container {
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: 100%;
+    max-height: calc(100dvh - 70px);
     overflow-y: auto !important;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
@@ -43,6 +41,11 @@
     width: 100vw;
     box-sizing: border-box;
     background: transparent;
+    padding-bottom: 24px; /* Espacio para el menú inferior */
+    touch-action: pan-y;
+    position: relative;
+    z-index: 11;
+    display: block;
   }
   .bottom-nav {
     position: fixed;
