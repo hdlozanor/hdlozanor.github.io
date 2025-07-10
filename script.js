@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function lockGlobalScroll() {
         if (isMobile()) {
-            document.body.style.overflow = 'hidden';
+            // document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
         }
     }

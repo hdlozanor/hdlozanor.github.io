@@ -1,7 +1,8 @@
 @media (max-width: 600px) {
   html, body {
-    height: 100vh;
-    overflow: hidden !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
   }
   .main-section {
     display: none;
@@ -18,35 +19,22 @@
   .main-section.active {
     display: flex;
     flex-direction: column;
+    overflow-y: auto !important;
   }
   .main-section.active {
     display: block;
-    height: 100dvh;
+    min-height: 100vh;
     width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background: #fff;
-    padding-bottom: 70px;
-    overflow-y: scroll !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    touch-action: pan-y;
+    position: relative;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    padding-bottom: 70px; /* espacio para el menú fijo */
   }
   .main-section.active > .container {
-    max-height: none;
-    overflow: visible !important;
-    height: auto;
-    min-height: 0;
-    width: 100vw;
-    box-sizing: border-box;
-    background: transparent;
-    padding-bottom: 24px;
-    touch-action: pan-y;
-    position: relative;
-    z-index: 11;
-    display: block;
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding: 2rem 1rem;
   }
   .bottom-nav {
     position: fixed;
