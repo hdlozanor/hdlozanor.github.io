@@ -1,8 +1,8 @@
 @media (max-width: 600px) {
   html, body {
-    height: auto !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+    height: 100vh;
+    overflow: hidden !important; /* scroll general bloqueado */
+    position: relative;
   }
   .main-section {
     display: none;
@@ -11,15 +11,13 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #fff;
     z-index: 10;
-    padding-bottom: 70px;
-    flex-direction: column;
+    overflow: hidden;
   }
   .main-section.active {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    overflow-y: auto !important;
+    overflow: hidden;
   }
   .main-section.active {
     display: block;
@@ -31,19 +29,19 @@
     padding-bottom: 70px; /* espacio para el menú fijo */
   }
   .main-section.active > .container {
-    height: auto !important;
-    max-height: none !important;
-    overflow-y: visible !important;
-    padding: 2rem 1rem;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 80px;
   }
   .bottom-nav {
-    position: fixed !important;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
     height: 65px;
+    z-index: 20000;
     background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
-    z-index: 9999;
     display: flex;
     justify-content: space-around;
     align-items: center;

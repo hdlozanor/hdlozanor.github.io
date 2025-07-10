@@ -183,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.main-section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(id).classList.add('active');
 
-            // Clase especial solo para el inicio
             if (id === 'inicio') {
                 document.body.classList.add('home-active');
             } else {
