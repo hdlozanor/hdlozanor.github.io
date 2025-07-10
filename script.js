@@ -179,6 +179,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        function activarSeccion(id) {
+            document.querySelectorAll('.main-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            // Clase especial solo para el inicio
+            if (id === 'inicio') {
+                document.body.classList.add('home-active');
+            } else {
+                document.body.classList.remove('home-active');
+            }
+        }
+
+
         // Show/hide bottom date/timer section based on current page
         const body = document.body;
         // Elimina cualquier clase *-active

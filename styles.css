@@ -37,11 +37,18 @@
     padding: 2rem 1rem;
   }
   .bottom-nav {
-    position: fixed;
-    left: 0;
+    position: fixed !important;
     bottom: 0;
+    left: 0;
     width: 100vw;
-    z-index: 20;
+    height: 65px;
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    z-index: 9999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    pointer-events: auto;
   }
   /* Ocultar los puntos del carrusel fuera de #inicio */
   .main-section:not(#inicio) .carousel-controls {
