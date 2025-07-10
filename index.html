@@ -17,8 +17,8 @@
     <audio id="background-music" src="audio/amarte.mp3" loop></audio>
 
     <!-- Section 1: Hero with Background and Countdown -->
-    <section id="inicio" class="hero-section">
-        <!-- Image Carousel -->
+    <section id="inicio" class="main-section hero-section">
+        <!-- Todo el contenido de la sección inicio, incluido el carrusel y los dots -->
         <div class="carousel-container">
             <div class="carousel-slide active">
                 <picture>
@@ -75,8 +75,7 @@
                 </picture>
             </div>
         </div>
-        
-        <!-- Carousel Controls -->
+        <!-- Carousel Controls SOLO dentro de inicio -->
         <div class="carousel-controls">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
@@ -88,16 +87,15 @@
             <span class="dot" data-slide="7"></span>
             <span class="dot" data-slide="8"></span>
         </div>
-        
         <div class="hero-overlay"></div>
         <div class="hero-content">
-        <div class="names">
-            <div class="names-stack">
-                <span class="bride-name">Tatiana</span>
-                <span class="ampersand">&</span>
-                <span class="groom-name">Hernán</span>
+            <div class="names">
+                <div class="names-stack">
+                    <span class="bride-name">Tatiana</span>
+                    <span class="ampersand">&</span>
+                    <span class="groom-name">Hernán</span>
+                </div>
             </div>
-        </div>
             <!-- <button class="scroll-btn" onclick="scrollToSection('detalles')">
                 <i class="fas fa-chevron-down"></i>
             </button> -->
@@ -133,12 +131,9 @@
             </div>
         </div>
     </div>
-    <div class="horizontal-floral-divider">
-        <img src="fotos/floral-divider.png" alt="Divisor floral">
-    </div>
 
     <!-- Section 2: Wedding Details -->
-    <section id="detalles" class="details-section section-with-floral-overlap">
+    <section id="detalles" class="main-section details-section section-with-floral-overlap">
         <div class="section-floral-decoration full-right">
             <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
@@ -185,12 +180,10 @@
     </div>
 
     <!-- Horizontal Floral Divider -->
-    <div class="horizontal-floral-divider">
-        <img src="fotos/floral-divider.png" alt="Divisor floral">
-    </div>
+    <!-- divisor floral eliminado de fuera de las secciones -->
 
     <!-- Section 5: Location with Google Maps -->
-    <section id="ubicacion" class="location-section section-with-floral-overlap">
+    <section id="ubicacion" class="main-section location-section section-with-floral-overlap">
         <div class="section-floral-decoration full-right">
             <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
@@ -233,10 +226,8 @@
     </section>
 
     <!-- Section 3: RSVP -->
-     <div class="horizontal-floral-divider">
-        <img src="fotos/floral-divider.png" alt="Divisor floral">
-    </div>
-    <section id="confirmacion" class="rsvp-section section-with-floral-overlap">
+
+    <section id="confirmacion" class="main-section rsvp-section section-with-floral-overlap">
         <div class="section-floral-decoration full-right">
             <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
@@ -307,13 +298,9 @@
         </div>
     </section>
 
-    <!-- Horizontal Floral Divider -->
-    <div class="horizontal-floral-divider">
-        <img src="fotos/floral-divider.png" alt="Divisor floral">
-    </div>
 
     <!-- Section 4: Dress Code -->
-    <section id="vestuario" class="dress-code-section section-with-floral-overlap">
+    <section id="vestuario" class="main-section dress-code-section section-with-floral-overlap">
         <div class="section-floral-decoration full-right">
             <img src="fotos/floral1.png" alt="Decoración floral">
         </div>
@@ -356,12 +343,6 @@
             </button> -->
         </div>
     </section>
-
-    <!-- Horizontal Floral Divider -->
-    <div class="horizontal-floral-divider">
-        <img src="fotos/floral-divider.png" alt="Divisor floral">
-    </div>
-
     
 
     <!-- Footer -->
@@ -399,8 +380,80 @@
         </a>
     </nav>
 
+    <style>
+    @media (max-width: 600px) {
+      html, body {
+        height: 100vh;
+        overflow: hidden !important;
+      }
+      .main-section {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        background: #fff;
+        z-index: 10;
+        padding-bottom: 70px;
+      }
+      .main-section.active {
+        display: block;
+      }
+      .bottom-nav {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        z-index: 20;
+      }
+      /* Ocultar los puntos del carrusel fuera de #inicio */
+      .main-section:not(#inicio) .carousel-controls {
+        display: none !important;
+      }
+    }
+    </style>
     <script src="script.js"></script>
     <script>
+    // --- SECCIONES TIPO PESTAÑA EN RESPONSIVE ---
+    function setActiveSection(sectionId) {
+      if (window.innerWidth > 600) return;
+      document.querySelectorAll('.main-section').forEach(sec => {
+        if (sec.id === sectionId) {
+          sec.classList.add('active');
+        } else {
+          sec.classList.remove('active');
+        }
+      });
+      // Actualiza el estado del menú
+      document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+        if (item.getAttribute('data-section') === sectionId) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+    // Inicializar: mostrar solo la sección activa al cargar (por defecto inicio o detalles)
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.innerWidth <= 600) {
+        // Por defecto, mostrar detalles
+        setActiveSection('detalles');
+      }
+      // Listeners para el menú inferior
+      document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+          const section = item.getAttribute('data-section');
+          if (section) {
+            setActiveSection(section);
+            // Evita scroll global
+            window.scrollTo(0, 0);
+            e.preventDefault();
+          }
+        });
+      });
+    });
     // --- ENVÍO DE FORMULARIO A GOOGLE SHEETS (UNIFICADO Y CORRECTO) ---
     const rsvpForm = document.getElementById('rsvpForm');
     const submitBtn = rsvpForm ? rsvpForm.querySelector('.submit-btn') : null;
