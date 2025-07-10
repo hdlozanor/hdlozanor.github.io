@@ -205,54 +205,66 @@ document.addEventListener('DOMContentLoaded', function () {
     updateActiveNav();
 
 });
-// --- BLOQUEO DE SCROLL Y MOVIMIENTO LIBRE EN MÓVILES (mejorado) ---
+// --- BLOQUEO DE SCROLL GLOBAL Y PERMISO SOLO EN SECCIÓN ACTIVA EN MÓVIL ---
 (function() {
     function isMobile() {
-        return window.innerWidth <= 900 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return window.innerWidth <= 600 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
-    function preventScroll(e) {
-        if (isMobile()) {
-            e.preventDefault();
-        }
-    }
-    function lockScroll() {
+    function lockGlobalScroll() {
         if (isMobile()) {
             document.body.style.overflow = 'hidden';
-            // NO usar position: fixed para permitir scrollIntoView
+            document.documentElement.style.overflow = 'hidden';
         }
     }
-    function unlockScroll() {
+    function unlockGlobalScroll() {
         document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
     }
-    // Bloquea scroll táctil y arrastre manual
-    window.addEventListener('touchmove', preventScroll, { passive: false });
-    window.addEventListener('wheel', preventScroll, { passive: false });
-    lockScroll();
-    window.addEventListener('resize', function() {
-        if (isMobile()) lockScroll(); else unlockScroll();
-    });
-
-    // Navegación solo por menú principal
-    document.querySelectorAll('.bottom-nav .nav-item').forEach(function(item) {
-        item.addEventListener('click', function(e) {
-            var href = item.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                var section = document.querySelector(href);
-                if (section) {
-                    unlockScroll(); // Permite scroll programático
-                    setTimeout(function() {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                        setTimeout(lockScroll, 700); // Vuelve a bloquear después del scroll
-                    }, 10);
+    // Solo permitir scroll en la sección activa
+    function allowSectionScroll() {
+        if (!isMobile()) return;
+        document.querySelectorAll('.main-section').forEach(sec => {
+            if (sec.classList.contains('active')) {
+                const container = sec.querySelector('.container');
+                if (container) {
+                    container.style.overflowY = 'auto';
+                    container.style.touchAction = 'pan-y';
+                }
+            } else {
+                const container = sec.querySelector('.container');
+                if (container) {
+                    container.style.overflowY = 'hidden';
+                    container.style.touchAction = 'none';
                 }
             }
         });
+    }
+    // Inicializar bloqueo de scroll global
+    document.addEventListener('DOMContentLoaded', function() {
+        if (isMobile()) {
+            lockGlobalScroll();
+            allowSectionScroll();
+        }
     });
-
-    // Evita scroll con teclado en móviles
-    window.addEventListener('keydown', function(e) {
-        if (isMobile() && ['ArrowUp','ArrowDown','PageUp','PageDown',' '].includes(e.key)) {
-            e.preventDefault();
+    // Al cambiar de sección por menú
+    document.querySelectorAll('.bottom-nav .nav-item').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            setTimeout(() => {
+                allowSectionScroll();
+            }, 350);
+        });
+    });
+    // Al cambiar tamaño de pantalla
+    window.addEventListener('resize', function() {
+        if (isMobile()) {
+            lockGlobalScroll();
+            allowSectionScroll();
+        } else {
+            unlockGlobalScroll();
+            document.querySelectorAll('.main-section .container').forEach(c => {
+                c.style.overflowY = '';
+                c.style.touchAction = '';
+            });
         }
     });
 })();

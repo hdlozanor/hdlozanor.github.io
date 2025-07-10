@@ -1,3 +1,61 @@
+@media (max-width: 600px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden !important;
+  }
+  .main-section {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    z-index: 10;
+    padding-bottom: 70px;
+    flex-direction: column;
+  }
+  .main-section.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-section.active {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #fff;
+    padding-bottom: 70px;
+  }
+  .main-section.active > .container {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100vw;
+    box-sizing: border-box;
+    background: transparent;
+  }
+  .bottom-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 20;
+  }
+  /* Ocultar los puntos del carrusel fuera de #inicio */
+  .main-section:not(#inicio) .carousel-controls {
+    display: none !important;
+  }
+}
 /* --- Estilos migrados desde el bloque <style> de index.html para la sección detalles --- */
 /* Limpieza: Se eliminan duplicados, se mantiene solo la versión más específica y responsiva de cada regla para la sección detalles */
 .image-zoom-wrapper {
