@@ -32,6 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
     updateForm();
 });
 document.addEventListener('DOMContentLoaded', function () {
+    // Activar la primera sección al cargar la página en modo móvil
+    if (window.innerWidth <= 600) {
+        const inicioSection = document.getElementById('inicio');
+        if (inicioSection) {
+            document.querySelectorAll('.main-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            inicioSection.classList.add('active');
+            
+            const container = inicioSection.querySelector('.container');
+            if (container) {
+                container.style.overflowY = 'auto';
+                container.style.touchAction = 'pan-y';
+            }
+            
+            document.body.classList.add('home-active');
+        }
+    }
+    
     // Countdown Timer
     const weddingDate = new Date('October 19, 2025 15:00:00').getTime();
 
@@ -140,10 +159,35 @@ document.addEventListener('DOMContentLoaded', function () {
             // Add active class to clicked item
             this.classList.add('active');
 
-            // Scroll to section
-            scrollToSection(targetId);
+            if (window.innerWidth <= 600) {
+                // En móvil, activamos la sección usando nuestra nueva lógica
+                document.querySelectorAll('.main-section').forEach(sec => {
+                    sec.classList.remove('active');
+                });
+                
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    
+                    // Permitir scroll solo en la sección activa
+                    document.querySelectorAll('.main-section .container').forEach(container => {
+                        container.style.overflowY = 'hidden';
+                        container.style.touchAction = 'none';
+                    });
+                    
+                    const activeContainer = targetSection.querySelector('.container');
+                    if (activeContainer) {
+                        activeContainer.style.overflowY = 'auto';
+                        activeContainer.style.touchAction = 'pan-y';
+                        activeContainer.scrollTop = 0; // Resetear el scroll al inicio
+                    }
+                }
+            } else {
+                // En desktop, usamos el comportamiento normal de scroll
+                scrollToSection(targetId);
+            }
 
-            // --- NUEVO: Forzar actualización de barra inferior según sección ---
+            // --- Actualizar clases del body según sección ---
             const body = document.body;
             // Elimina cualquier clase *-active
             body.className = body.className
@@ -174,11 +218,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         navItems.forEach(item => {
             item.classList.remove('active');
-            if (item.getAttribute('data-section') === current) {
+            if (item.getAttribute('href') === '#' + current) {
                 item.classList.add('active');
             }
         });
 
+        // Función para activar una sección específica (en móvil)
         function activarSeccion(id) {
             document.querySelectorAll('.main-section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(id).classList.add('active');
@@ -188,8 +233,23 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 document.body.classList.remove('home-active');
             }
+            
+            // Permitir scroll solo en la sección activa
+            if (window.innerWidth <= 600) {
+                document.querySelectorAll('.main-section').forEach(sec => {
+                    const container = sec.querySelector('.container');
+                    if (container) {
+                        if (sec.id === id) {
+                            container.style.overflowY = 'auto';
+                            container.style.touchAction = 'pan-y';
+                        } else {
+                            container.style.overflowY = 'hidden';
+                            container.style.touchAction = 'none';
+                        }
+                    }
+                });
+            }
         }
-
 
         // Show/hide bottom date/timer section based on current page
         const body = document.body;
@@ -222,50 +282,122 @@ document.addEventListener('DOMContentLoaded', function () {
     function isMobile() {
         return window.innerWidth <= 600 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
+    
     function lockGlobalScroll() {
         if (isMobile()) {
-            // document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.height = '100%';
+            document.body.style.top = '0';
+            document.body.style.left = '0';
         }
     }
+    
     function unlockGlobalScroll() {
         document.body.style.overflow = '';
         document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.height = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
     }
+    
     // Solo permitir scroll en la sección activa
     function allowSectionScroll() {
         if (!isMobile()) return;
+        
         document.querySelectorAll('.main-section').forEach(sec => {
             if (sec.classList.contains('active')) {
                 const container = sec.querySelector('.container');
                 if (container) {
                     container.style.overflowY = 'auto';
+                    container.style.overflowX = 'hidden';
                     container.style.touchAction = 'pan-y';
+                    container.style.WebkitOverflowScrolling = 'touch';
+                    container.style.height = '100vh';
+                    container.style.paddingBottom = '80px'; // Espacio para el menú inferior
                 }
+                // La sección activa debe ser visible y permitir interacción
+                sec.style.display = 'flex';
+                sec.style.visibility = 'visible';
+                sec.style.pointerEvents = 'auto';
+                sec.style.opacity = '1';
             } else {
                 const container = sec.querySelector('.container');
                 if (container) {
                     container.style.overflowY = 'hidden';
                     container.style.touchAction = 'none';
                 }
+                // Las secciones inactivas no deben ser visibles ni interactuables
+                sec.style.display = 'none';
+                sec.style.visibility = 'hidden';
+                sec.style.pointerEvents = 'none';
+                sec.style.opacity = '0';
             }
         });
     }
+    
+    // Marcar una sección como activa y actualizar el scroll
+    function activateSection(sectionId) {
+        document.querySelectorAll('.main-section').forEach(sec => {
+            sec.classList.remove('active');
+        });
+        
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            
+            // Actualizar clases en el body
+            const body = document.body;
+            body.className = body.className
+                .split(' ')
+                .filter(c => !c.endsWith('-active'))
+                .join(' ');
+                
+            body.classList.add(sectionId + '-active');
+            
+            if (sectionId === 'inicio') {
+                body.classList.add('home-active');
+            } else {
+                body.classList.remove('home-active');
+            }
+            
+            // Actualizar navegación
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + sectionId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Aplicar scroll solo a la sección activa
+            allowSectionScroll();
+        }
+    }
+    
     // Inicializar bloqueo de scroll global
     document.addEventListener('DOMContentLoaded', function() {
         if (isMobile()) {
             lockGlobalScroll();
-            allowSectionScroll();
+            
+            // Activar la primera sección por defecto
+            const firstSectionId = document.querySelector('.main-section').id;
+            activateSection(firstSectionId);
+            
+            // Configurar navegación
+            document.querySelectorAll('.bottom-nav .nav-item').forEach(function(item) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    activateSection(targetId);
+                });
+            });
         }
     });
-    // Al cambiar de sección por menú
-    document.querySelectorAll('.bottom-nav .nav-item').forEach(function(item) {
-        item.addEventListener('click', function(e) {
-            setTimeout(() => {
-                allowSectionScroll();
-            }, 350);
-        });
-    });
+    
     // Al cambiar tamaño de pantalla
     window.addEventListener('resize', function() {
         if (isMobile()) {
@@ -273,9 +405,19 @@ document.addEventListener('DOMContentLoaded', function () {
             allowSectionScroll();
         } else {
             unlockGlobalScroll();
+            document.querySelectorAll('.main-section').forEach(sec => {
+                sec.style.display = '';
+                sec.style.visibility = '';
+                sec.style.pointerEvents = '';
+                sec.style.opacity = '';
+            });
             document.querySelectorAll('.main-section .container').forEach(c => {
                 c.style.overflowY = '';
+                c.style.overflowX = '';
                 c.style.touchAction = '';
+                c.style.WebkitOverflowScrolling = '';
+                c.style.height = '';
+                c.style.paddingBottom = '';
             });
         }
     });

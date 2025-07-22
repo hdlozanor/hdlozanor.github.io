@@ -2,31 +2,40 @@
   html, body {
     height: 100vh;
     overflow: hidden !important; /* scroll general bloqueado */
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
   .main-section {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 10;
     overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   .main-section.active {
     display: flex !important;
     flex-direction: column;
     overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    z-index: 100;
   }
-  .main-section.active {
-    display: block;
-    min-height: 100vh;
-    width: 100vw;
-    position: relative;
+  .main-section.active > .container {
     overflow-y: auto !important;
-    overflow-x: hidden;
-    padding-bottom: 70px; /* espacio para el menú fijo */
+    overflow-x: hidden !important;
+    height: 100vh !important;
+    width: 100% !important;
+    padding-bottom: 80px !important; /* Espacio para el menú inferior */
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
   }
   .main-section.active > .container {
     flex: 1;
