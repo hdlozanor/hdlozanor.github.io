@@ -1,0 +1,52 @@
+/* Estilos específicos para centrar la sección de detalles en móvil */
+@media (max-width: 600px) {
+    /* Asegurar que el contenedor principal esté centrado */
+    #detalles .container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Centrar el contenido de detalles específicamente */
+    #detalles .details-content {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 !important;
+    }
+
+    /* Asegurar que las tarjetas de detalles estén centradas */
+    #detalles .detail-image-frame.card-style,
+    #detalles .detail-card.reception.card-style {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 1.2rem auto !important;
+    }
+    
+    /* Estilos específicos para el contenedor de la imagen */
+    #detalles .image-zoom-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Estilos específicos para la imagen de la hacienda */
+    #detalles .hacienda-img {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Estilos específicos para las filas de información */
+    #detalles .reception-detail-row.left-align {
+        width: 90% !important;
+        margin: 0 auto !important;
+        text-align: left !important;
+        padding: 0 !important;
+    }
+}

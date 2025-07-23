@@ -1,0 +1,58 @@
+/* 
+ * Estilos específicos para ajustar el centrado en móvil
+ * Solo afecta al contenido visual, no a la funcionalidad
+ */
+@media (max-width: 600px) {
+    /* Contenedor de la sección de detalles */
+    #detalles .container {
+        /* Contenedor principal centrado */
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Contenido de detalles */
+    #detalles .details-content {
+        /* Ancho específico para estar centrado */
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    
+    /* Tarjetas dentro del contenido */
+    #detalles .detail-image-frame.card-style,
+    #detalles .detail-card.reception.card-style {
+        /* Tarjetas que se ajustan al contenedor */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Imagen de la hacienda y texto informativo */
+    #detalles .image-zoom-wrapper,
+    #detalles .reception-card-inner {
+        /* Elementos internos bien centrados */
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    
+    /* Alineación de las filas de texto */
+    #detalles .reception-detail-row.left-align {
+        /* Texto informativo */
+        width: 90% !important;
+        margin: 5px auto !important;
+        text-align: left !important;
+    }
+    
+    /* Aplicar estilos similares a otras secciones */
+    #ubicacion .location-content,
+    #confirmacion .rsvp-form-container,
+    #vestuario .dress-code-content {
+        /* Otras secciones con mismo centrado */
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+}

@@ -1,12 +1,106 @@
-@media (max-width: 600px) {
-  html, body {
-    height: 100vh;
-    overflow: hidden !important; /* scroll general bloqueado */
+/* Estilos para el pop-up de confirmación */
+.confirmation-popup {
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+    background-color: #fffbe9;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 85%;
+    width: 350px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #c0392b;
+    animation: scaleIn 0.3s ease;
+}
+
+.popup-icon {
+    color: #c0392b;
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.popup-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #c0392b;
+    margin: 0 0 10px 0;
+}
+
+.popup-content p {
+    color: #5d4037;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.close-popup-btn {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-popup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  html, body {
+    font-size: 16px !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
   }
+  
+  .section-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10px 0 !important;
+    background-color: rgba(255, 251, 233, 0.95) !important;
+    z-index: 9999 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+  }
+  
+  .section-header h2 {
+    /* font-size: 1.8rem !important; */
+    font-size: 2.55rem !important;
+    
+  }
+  
   .main-section {
     display: none;
     position: fixed;
@@ -34,9 +128,52 @@
     height: 100vh !important;
     width: 100% !important;
     padding-bottom: 80px !important; /* Espacio para el menú inferior */
+    padding-top: 70px !important; /* Espacio para el encabezado fijo */
     -webkit-overflow-scrolling: touch !important;
     box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 5 !important;
+    display: block !important;
   }
+  
+  /* Asegurar que todos los contenedores de contenido puedan hacer scroll */
+  .details-content, 
+  .location-content, 
+  .rsvp-form-container, 
+  .dress-code-content {
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+  
+  /* Permitir que las cards se muestren verticalmente */
+  .detail-card.reception.card-style,
+  .detail-image-frame.card-style {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    max-width: 100% !important;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 65px;
+    z-index: 20000;
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    pointer-events: auto;
+  }
+  /* Ocultar los puntos del carrusel fuera de #inicio */
+  .main-section:not(#inicio) .carousel-controls {
+    display: none !important;
+  }
+}
   .main-section.active > .container {
     flex: 1;
     overflow-y: auto;
@@ -61,7 +198,7 @@
   .main-section:not(#inicio) .carousel-controls {
     display: none !important;
   }
-}
+
 /* --- Estilos migrados desde el bloque <style> de index.html para la sección detalles --- */
 /* Limpieza: Se eliminan duplicados, se mantiene solo la versión más específica y responsiva de cada regla para la sección detalles */
 .image-zoom-wrapper {
@@ -142,34 +279,40 @@
 @media (max-width: 900px) {
   .details-content {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center !important; /* Forzar alineación centrada */
+    justify-content: center !important; /* Forzar justificación centrada */
     gap: 1.2rem;
-    width: 100vw;
-    max-width: 100vw;
-    margin: 0;
-    padding: 0;
+    width: 100%; /* Cambiado a 100% para mejor control */
+    max-width: 100%; /* Cambiado a 100% */
+    margin: 0 auto;
     box-sizing: border-box;
-    /* overflow-x: hidden; */
+    /* Reorganiza los elementos para dispositivos móviles */
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Eliminar padding horizontal */
+  }
+  .details-content .detail-image-frame.card-style {
+    order: 2; /* Mover la imagen al segundo lugar */
+    margin-top: 1rem; /* Añadir espacio entre los elementos */
+    margin-left: auto !important; /* Centro horizontal forzado */
+    margin-right: auto !important; /* Centro horizontal forzado */
+    width: 85% !important; /* Ancho ajustado para asegurar que se vea centrado */
+    margin-bottom: 0; /* Elimina margen inferior */
+    box-sizing: border-box;
+  }
+  .details-content .detail-card.reception.card-style {
+    order: 1; /* Mover los detalles al primer lugar */
+    margin-bottom: 0; /* Quitar el margen inferior ya que ahora va primero */
+    margin-left: auto !important; /* Centro horizontal forzado */
+    margin-right: auto !important; /* Centro horizontal forzado */
+    width: 85% !important; /* Ancho ajustado para asegurar que se vea centrado */
+    box-sizing: border-box;
   }
   .detail-image-frame.card-style,
   .detail-card.reception.card-style {
-    width: 100vw;
-    max-width: 100vw;
+    max-width: 85% !important;
     min-width: 0;
-    margin: 0 0 1.2rem 0;
-    padding: 0.7rem 0 0.7rem 0;
-    box-sizing: border-box;
-    overflow: visible;
-    border-radius: 12px;
-  }
-}
-  .detail-image-frame.card-style,
-  .detail-card.reception.card-style {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    margin: 0 0 1.2rem 0;
-    padding: 0.7rem 0 0.7rem 0;
+    padding: 0.7rem;
     box-sizing: border-box;
     overflow: visible;
     border-radius: 12px;
@@ -177,19 +320,24 @@
   .reception-card-inner {
     min-height: 0;
     padding: 0;
+    text-align: center;
   }
   .reception-content {
     max-width: 100%;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0 0.5rem;
     box-sizing: border-box;
+    text-align: center;
   }
   .hacienda-img {
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
   }
+}
   .hacienda-caption {
     font-size: 1.5rem;
     margin-top: 0.7rem;
@@ -262,11 +410,10 @@ html, body {
 /* --- Card frame y estilo para el card de Ceremonia & Recepción --- */
 /* Card frame y estilo para el card de Ceremonia & Recepción */
 .detail-card.reception.card-style {
-    background: #fff url('fotos/frame.jpg') center center no-repeat;
-    background-size: cover;
+    background: #fff;
     border: none;
     border-radius: 32px;
-    box-shadow: 0 10px 40px rgba(192,57,43,0.18), 0 2px 0 #e74c3c22 inset;
+    box-shadow: 0 10px 40px rgba(192,57,43,0.18);
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -666,14 +813,14 @@ html, body {
 /* Botón de música en la esquina superior izquierda */
 .music-btn {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 19px;
+    left: 7px;
     z-index: 1001;
     background: rgba(255,255,255,0.7);
     border: none;
     border-radius: 50%;
-    width: 54px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -686,8 +833,9 @@ html, body {
 }
 .music-btn i {
     color: #e74c3c;
-    font-size: 2rem;
+    font-size: 1.8rem;
     transition: color 0.2s;
+    padding-top: 4px;
 }
 /* Reset and Defaults */
 * {
@@ -1054,9 +1202,13 @@ body.home-active .bottom-section {
 }
 .section-header {
     text-align: center;
-    margin-bottom: -3rem;
-    position: relative;
-    z-index: 20;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 251, 233, 0.9);
+    padding: 5px 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .section-header h2 {
     font-family: 'Playfair Display', serif;
@@ -1065,7 +1217,7 @@ body.home-active .bottom-section {
 }
 .decorative-line {
     width: 100px;
-    height: 3px;
+    /* height: 3px; */
     /* background-color: #c0392b; */
     margin: 1rem auto;
 }
@@ -1081,7 +1233,7 @@ body.home-active .bottom-section {
     padding: 2rem;
     margin: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(37, 37, 37, 0.1);
     flex: 1 1 calc(50% - 2rem);
     max-width: 45%;
 }
@@ -1101,11 +1253,10 @@ body.home-active .bottom-section {
 
 /* --- Marco decorativo usando imagen real de frame antiguo --- */
 .detail-image-frame {
-    background: url('fotos/frame.jpg') center center no-repeat;
-    background-size: cover;
+    background: #fff;
     border: none;
     border-radius: 32px;
-    box-shadow: 0 10px 40px rgba(192,57,43,0.18), 0 2px 0 #e74c3c22 inset;
+    box-shadow: 0 10px 40px rgba(77, 19, 13, 0.18);
     padding: 2.5rem;
     display: flex;
     align-items: center;
@@ -1389,6 +1540,7 @@ body.home-active .bottom-section {
 .dress-note p {
     color: #555;
     font-size: 1rem;
+    margin-left: -25px;
 }
 
 /* Location Section */
@@ -1519,6 +1671,7 @@ body.home-active .bottom-section {
     top: 0;
     bottom: 0;
     width: 50%;
+    pointer-events: none; /* Evita que interfiera con el contenido */
 }
 
 .section-floral-decoration.full-right {
@@ -1575,6 +1728,27 @@ body.home-active .bottom-section {
     max-width: 1200px;
     margin: auto;
     padding: 0 0rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto; /* Centrado horizontal */
+        padding-left: 10px; /* Padding reducido */
+        padding-right: 10px; /* Padding reducido */
+        text-align: center;
+        box-sizing: border-box;
+    }
+    
+    /* Asegurar que el header de sección esté centrado */
+    .section-header {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
 }
 
 
@@ -1641,9 +1815,16 @@ body:not(.home-active) {
     }
     
     .container {
-    max-width: 1200px;
+    /* max-width: 1200px;
     margin: 5%;
     padding: 0 0rem;
+    margin-bottom: auto; */
+    max-width: 1200px;
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-top: 1%;
+    padding: 0 0rem 50px 0;
+    margin-bottom: 20%;
     }
 
     /* Names at top - centered */
@@ -1814,8 +1995,7 @@ body:not(.home-active) {
     
     /* Mobile responsiveness for section florals */
     .section-floral-decoration {
-        width: 40%;
-        opacity: 0.5;
+        display: none; /* Ocultar completamente la decoración floral en móviles */
     }
     
     /* Mobile carousel controls */
@@ -1884,11 +2064,10 @@ html {
 
 /* --- Card frame y caption solo para la imagen de la hacienda --- */
 .detail-image-frame.card-style {
-    background: #fff url('fotos/frame.jpg') center center no-repeat;
-    background-size: cover;
+    background: #fff;
     border: none;
     border-radius: 32px;
-    box-shadow: 0 10px 40px rgba(192,57,43,0.18), 0 2px 0 #e74c3c22 inset;
+    box-shadow: 0 10px 40px rgba(192,57,43,0.18);
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -1949,6 +2128,9 @@ html {
   }
   .decorative-line {
     margin: 0.3rem auto 0.7rem auto !important;
+    width: 70px !important;
+    height: 2px !important;
+    background-color: #c0392b !important;
   }
   .details-content {
     flex-direction: column !important;
@@ -2021,6 +2203,15 @@ html {
     min-height: 0 !important;
     height: auto !important;
     padding: 0 !important;
+  }
+}
+
+/* Fin de los estilos */
+
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+  .color-reference {
+    align-items: center;
   }
 }
 }

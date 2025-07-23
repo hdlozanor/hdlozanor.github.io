@@ -1,56 +1,194 @@
-// Lógica para mostrar/ocultar campos del formulario RSVP
-// Adaptado para la nueva estructura: nombre y teléfono individuales
-
+// Funcionalidad principal del sitio
 document.addEventListener('DOMContentLoaded', function() {
-    const radioSi = document.querySelector('input[name="asistencia"][value="si"]');
-    const radioNo = document.querySelector('input[name="asistencia"][value="no"]');
+    // Audio de fondo
+    const musicBtn = document.getElementById('music-toggle');
+    const musicIcon = document.getElementById('music-icon');
+    const audio = document.getElementById('background-music');
+    
+    // Configurar control de audio
+    if (musicBtn && audio) {
+        let isPlaying = false;
+        
+        // Función para reproducir/pausar el audio
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove('fa-heart-pulse');
+                musicIcon.classList.add('fa-heart');
+            } else {
+                audio.play().catch(error => {
+                    console.log('Error al reproducir audio:', error);
+                });
+                musicIcon.classList.remove('fa-heart');
+                musicIcon.classList.add('fa-heart-pulse');
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Agregar evento de clic al botón
+        musicBtn.addEventListener('click', toggleAudio);
+    }
+    
+    // Zoom de imagen
+    const haciendaImg = document.getElementById('hacienda-img');
+    const modal = document.getElementById('hacienda-modal');
+    const closeModal = document.getElementById('close-hacienda-modal');
+    
+    if (haciendaImg && modal && closeModal) {
+        // Abrir modal al hacer clic en la imagen
+        haciendaImg.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        });
+        
+        // Cerrar modal
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Restaurar scroll
+        });
+        
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    
+    // Formulario de confirmación
+    const radioSi = document.querySelector('input[name="asistencia"][value="Si"]');
+    const radioNo = document.querySelector('input[name="asistencia"][value="No"]');
     const acompGroup = document.getElementById('acompanantes-group');
     const nombreGroup = document.getElementById('nombre-group');
-    // const telefonoGroup = document.getElementById('telefono-group');
-    //const mensajeGroup = document.querySelector('textarea#mensaje').parentElement;
+    const rsvpForm = document.getElementById('rsvpForm');
 
     function updateForm() {
-        if (radioSi.checked) {
-            nombreGroup.style.display = '';
-            // telefonoGroup.style.display = '';
-            acompGroup.style.display = '';
-            //mensajeGroup.style.display = '';
-        } else if (radioNo.checked) {
-            nombreGroup.style.display = '';
-            // telefonoGroup.style.display = '';
+        if (radioSi && radioSi.checked) {
+            nombreGroup.style.display = 'block';
+            acompGroup.style.display = 'flex';
+        } else if (radioNo && radioNo.checked) {
+            nombreGroup.style.display = 'block';
             acompGroup.style.display = 'none';
-            //mensajeGroup.style.display = '';
         } else {
             nombreGroup.style.display = 'none';
-            // telefonoGroup.style.display = 'none';
             acompGroup.style.display = 'none';
-            //mensajeGroup.style.display = 'none';
-        }
-    }
-    radioSi.addEventListener('change', updateForm);
-    radioNo.addEventListener('change', updateForm);
-    updateForm();
-});
-document.addEventListener('DOMContentLoaded', function () {
-    // Activar la primera sección al cargar la página en modo móvil
-    if (window.innerWidth <= 600) {
-        const inicioSection = document.getElementById('inicio');
-        if (inicioSection) {
-            document.querySelectorAll('.main-section').forEach(sec => {
-                sec.classList.remove('active');
-            });
-            inicioSection.classList.add('active');
-            
-            const container = inicioSection.querySelector('.container');
-            if (container) {
-                container.style.overflowY = 'auto';
-                container.style.touchAction = 'pan-y';
-            }
-            
-            document.body.classList.add('home-active');
         }
     }
     
+    if (radioSi && radioNo) {
+        radioSi.addEventListener('change', updateForm);
+        radioNo.addEventListener('change', updateForm);
+        updateForm();
+    }
+    
+    // Manejar envío del formulario
+    if (rsvpForm) {
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí puedes agregar la lógica para enviar los datos del formulario
+            // Por ahora, solo mostraremos un mensaje de confirmación
+            alert('¡Gracias por confirmar tu asistencia!');
+            
+            // Opcional: reiniciar formulario
+            this.reset();
+            updateForm();
+        });
+    }
+
+    // Countdown Timer
+    const weddingDate = new Date('October 19, 2025 15:00:00').getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeleft = weddingDate - now;
+
+        const months = Math.floor(timeleft / (1000 * 60 * 60 * 24 * 30));
+        const days = Math.floor((timeleft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        document.getElementById('months').textContent = months;
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+
+        if (timeleft < 0) {
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = "¡El día ha llegado!";
+        }
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initialize immediately
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Handle wrap around
+        if (n >= totalSlides) currentSlide = 0;
+        if (n < 0) currentSlide = totalSlides - 1;
+
+        // Show current slide and dot
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+
+    // Auto advance carousel every 4 seconds
+    setInterval(nextSlide, 4000);
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+
+    // Smooth scrolling for navigation
+    window.scrollToSection = function(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
+    
+    // Manejar envío del formulario
+    if (rsvpForm) {
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí puedes agregar la lógica para enviar los datos del formulario
+            // por ejemplo, usando fetch() para enviar a un endpoint
+            
+            // Por ahora, solo mostraremos un mensaje de confirmación
+            alert('¡Gracias por confirmar tu asistencia!');
+            
+            // Opcional: reiniciar formulario
+            this.reset();
+            updateForm();
+        });
+    }
+
+// Funcionalidad principal del sitio
+document.addEventListener('DOMContentLoaded', function() {
     // Countdown Timer
     const weddingDate = new Date('October 19, 2025 15:00:00').getTime();
 
@@ -159,49 +297,29 @@ document.addEventListener('DOMContentLoaded', function () {
             // Add active class to clicked item
             this.classList.add('active');
 
-            if (window.innerWidth <= 600) {
-                // En móvil, activamos la sección usando nuestra nueva lógica
-                document.querySelectorAll('.main-section').forEach(sec => {
-                    sec.classList.remove('active');
-                });
-                
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                    
-                    // Permitir scroll solo en la sección activa
-                    document.querySelectorAll('.main-section .container').forEach(container => {
-                        container.style.overflowY = 'hidden';
-                        container.style.touchAction = 'none';
-                    });
-                    
-                    const activeContainer = targetSection.querySelector('.container');
-                    if (activeContainer) {
-                        activeContainer.style.overflowY = 'auto';
-                        activeContainer.style.touchAction = 'pan-y';
-                        activeContainer.scrollTop = 0; // Resetear el scroll al inicio
-                    }
-                }
-            } else {
-                // En desktop, usamos el comportamiento normal de scroll
+            // Desktop: usar scroll normal
+            if (window.innerWidth > 600) {
                 scrollToSection(targetId);
+                
+                // Actualizar clases en el body
+                const body = document.body;
+                // Elimina cualquier clase *-active
+                body.className = body.className
+                    .split(' ')
+                    .filter(c => !c.endsWith('-active'))
+                    .join(' ');
+                if (targetId) {
+                    body.classList.add(targetId + '-active');
+                }
+                if (targetId === 'inicio') {
+                    body.classList.add('home-active');
+                } else {
+                    body.classList.remove('home-active');
+                }
             }
-
-            // --- Actualizar clases del body según sección ---
-            const body = document.body;
-            // Elimina cualquier clase *-active
-            body.className = body.className
-                .split(' ')
-                .filter(c => !c.endsWith('-active'))
-                .join(' ');
-            if (targetId) {
-                body.classList.add(targetId + '-active');
-            }
-            if (targetId === 'inicio') {
-                body.classList.add('home-active');
-            } else {
-                body.classList.remove('home-active');
-            }
+            // El manejo móvil se hace en mobile-scroll.js
+        });
+    });
         });
     });
 
@@ -223,36 +341,35 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Función para activar una sección específica (en móvil)
-        function activarSeccion(id) {
-            document.querySelectorAll('.main-section').forEach(sec => sec.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-
-            if (id === 'inicio') {
-                document.body.classList.add('home-active');
-            } else {
-                document.body.classList.remove('home-active');
-            }
-            
-            // Permitir scroll solo en la sección activa
-            if (window.innerWidth <= 600) {
-                document.querySelectorAll('.main-section').forEach(sec => {
-                    const container = sec.querySelector('.container');
-                    if (container) {
-                        if (sec.id === id) {
-                            container.style.overflowY = 'auto';
-                            container.style.touchAction = 'pan-y';
-                        } else {
-                            container.style.overflowY = 'hidden';
-                            container.style.touchAction = 'none';
-                        }
-                    }
-                });
-            }
-        }
-
         // Show/hide bottom date/timer section based on current page
         const body = document.body;
+        // Elimina cualquier clase *-active
+        body.className = body.className
+            .split(' ')
+            .filter(c => !c.endsWith('-active'))
+            .join(' ');
+        if (current) {
+            body.classList.add(current + '-active');
+        }
+        // Solo agrega la clase home-active si estamos en la sección con id="inicio"
+        if (current === 'inicio') {
+            body.classList.add('home-active');
+        } else {
+            body.classList.remove('home-active');
+        }
+    }
+
+    // Listen for scroll events (solo en escritorio)
+    if (window.innerWidth > 600) {
+        window.addEventListener('scroll', updateActiveNav);
+    }
+    
+    // Initialize on page load (solo en escritorio)
+    if (window.innerWidth > 600) {
+        updateActiveNav();
+    }
+
+});
         // Elimina cualquier clase *-active
         body.className = body.className
             .split(' ')
@@ -273,15 +390,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Listen for scroll events
     window.addEventListener('scroll', updateActiveNav);
     
-    // Initialize on page load
-    updateActiveNav();
+    // Initialize on page load (solo en escritorio)
+    if (window.innerWidth > 600) {
+        updateActiveNav();
+    }
 
 });
-// --- BLOQUEO DE SCROLL GLOBAL Y PERMISO SOLO EN SECCIÓN ACTIVA EN MÓVIL ---
-(function() {
-    function isMobile() {
-        return window.innerWidth <= 600 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
     
     function lockGlobalScroll() {
         if (isMobile()) {
@@ -313,25 +427,33 @@ document.addEventListener('DOMContentLoaded', function () {
             if (sec.classList.contains('active')) {
                 const container = sec.querySelector('.container');
                 if (container) {
+                    // Habilitar scroll para el contenedor principal
                     container.style.overflowY = 'auto';
                     container.style.overflowX = 'hidden';
                     container.style.touchAction = 'pan-y';
                     container.style.WebkitOverflowScrolling = 'touch';
                     container.style.height = '100vh';
                     container.style.paddingBottom = '80px'; // Espacio para el menú inferior
+                    
+                    // Asegurarse de que el contenido sea visible
+                    sec.style.display = 'block';
+                    sec.style.visibility = 'visible';
+                    sec.style.pointerEvents = 'auto';
+                    sec.style.opacity = '1';
+                    
+                    // Forzar relayout para asegurar que el scroll funcione
+                    container.scrollTop = 0.1;
+                    setTimeout(() => {
+                        container.scrollTop = 0;
+                    }, 0);
                 }
-                // La sección activa debe ser visible y permitir interacción
-                sec.style.display = 'flex';
-                sec.style.visibility = 'visible';
-                sec.style.pointerEvents = 'auto';
-                sec.style.opacity = '1';
             } else {
                 const container = sec.querySelector('.container');
                 if (container) {
                     container.style.overflowY = 'hidden';
                     container.style.touchAction = 'none';
                 }
-                // Las secciones inactivas no deben ser visibles ni interactuables
+                
                 sec.style.display = 'none';
                 sec.style.visibility = 'hidden';
                 sec.style.pointerEvents = 'none';

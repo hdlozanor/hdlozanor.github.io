@@ -1,0 +1,69 @@
+/* Estilos adicionales para solucionar el scroll en cada sección en modo móvil */
+@media (max-width: 600px) {
+    /* Reset de los estilos que podrían estar bloqueando el scroll */
+    html, body {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        touch-action: none !important;
+    }
+
+    /* Controlar las secciones: ocultas por defecto */
+    .main-section {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /* La sección activa aparece */
+    .main-section.active {
+        display: block !important;
+    }
+
+    /* El contenedor dentro de la sección activa debe ser scrollable */
+    .main-section.active > .container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important; /* Soporte iOS */
+        touch-action: pan-y !important;
+        padding-bottom: 100px !important; /* Espacio para el menú inferior */
+        z-index: 10 !important;
+    }
+
+    /* Elementos contenedores dentro de cada sección */
+    .details-content,
+    .location-content,
+    .rsvp-form-container,
+    .dress-code-content {
+        display: block !important;
+        width: 100% !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Otros ajustes para evitar problemas de scroll */
+    .bottom-nav {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+    }
+
+    /* Hack para forzar hardware acceleration */
+    .main-section.active > .container {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+}

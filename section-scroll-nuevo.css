@@ -1,0 +1,265 @@
+/* Solución directa para scroll en móviles */
+
+/* Resetear estilos que puedan interferir */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Comportamiento específico para móviles */
+@media (max-width: 600px) {
+    /* Bloquear scroll general */
+    html, body {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+    }
+    
+    /* Ajustar decoración floral en móvil */
+    .section-floral-decoration {
+        opacity: 0.4 !important; /* Más sutil pero visible */
+        width: 35% !important; /* Más pequeña */
+    }
+    
+    /* Secciones base */
+    .main-section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index: 10;
+    }
+    
+    /* Sección activa */
+    .main-section.active {
+        display: block;
+    }
+    
+    /* Contenedor scrollable */
+    .main-section.active > .container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 80px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Centrar el texto */
+    }
+    
+    /* Contenidos de las secciones */
+    .details-content,
+    .location-content{
+        padding-bottom: 0px;
+        box-sizing: border-box;
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: -20px; /* Corregido: eliminado el margen negativo */
+        text-align: center; /* Centrar contenido */
+    }
+    .rsvp-form-container,
+    .dress-code-content {
+        padding-bottom: 0px;
+        box-sizing: border-box;
+        width: 90%;
+        max-width: 100%;
+        margin: 1rem auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: -20px; /* Corregido: eliminado el margen negativo */
+        text-align: center; /* Centrar contenido */
+    }
+    
+    /* Contenedores de tarjetas en todas las secciones */
+    .detail-image-frame.card-style,
+    .detail-card.reception.card-style,
+    .location-info,
+    .map-container,
+    .rsvp-form,
+    .dress-code-card {
+        width: 90%;
+        max-width: 90%;
+        min-width: 0;
+        margin: 1rem auto 1.2rem auto;
+        padding: 0.7rem;
+        box-sizing: border-box;
+        overflow: visible;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(240,240,240,0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Asegurar que el texto esté centrado */
+    }
+    
+    /* Asegurar que las imágenes se ajusten correctamente */
+    .hacienda-img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 12px !important;
+    }
+    
+    /* Mejorar estilo de la leyenda */
+    .hacienda-caption {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-top: 0.7rem !important;
+        font-size: 1.5rem !important;
+    }
+    
+    /* Asegurar que los contenidos de las tarjetas estén centrados */
+    .reception-card-inner {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+    
+    /* Centrar la imagen y su contenedor correctamente */
+    .image-zoom-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+    
+    /* Centrar horizontalmente los elementos hijos de recepción */
+    .reception-detail-row.left-align {
+        text-align: left !important;
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    
+    /* Ajustes específicos para el formulario de confirmación */
+    .rsvp-form {
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+    
+    .radio-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    .radio-option {
+        margin: 0.5rem 0 !important;
+        text-align: center !important;
+    }
+    
+    .form-group {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0.8rem auto !important;
+    }
+    
+    .acompanantes-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    .acompanante-col {
+        margin: 0.5rem 0 !important;
+        text-align: center !important;
+    }
+    
+    /* Navegación inferior siempre visible */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    /* Ajustes específicos para la sección de Ubicación */
+    .location-info {
+        text-align: center !important;
+    }
+    
+    .location-address, .location-features {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .feature {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .directions-btn {
+        margin: 1rem auto !important;
+        display: inline-block !important;
+    }
+    
+    /* Ajustes específicos para la sección de Código de Vestuario */
+    .dress-code-card h3, .dress-code-card ul {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .dress-note {
+        text-align: center !important;
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Ajustar fondos de las secciones en móvil para que coincidan con la versión web */
+    .details-section::before,
+    .rsvp-section::before,
+    .dress-code-section::before,
+    .location-section::before {
+        background-color: rgba(255, 255, 255, 0.92) !important; /* Igual que en la versión web */
+    }
+    
+    /* Asegurar que los encabezados de sección estén centrados */
+    .section-header {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 1rem auto 1rem auto !important;
+        padding: 0 !important;
+    }
+    
+    .section-header h2 {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto 0.2rem auto !important;
+    }
+    
+    .decorative-line {
+        margin: 0 auto !important;
+    }
+}
