@@ -247,41 +247,35 @@
                             </label>
                         </div>
                     </div>
+                    <div class="form-group" id="id-group" style="display:none;">
+                        <label for="id">Núm Identificación</label>
+                        <input type="text" id="id" name="id">
+                    </div>                    
                     <div class="form-group" id="nombre-group" style="display:none;">
                         <label for="nombre">Nombre Completo</label>
                         <input type="text" id="nombre" name="nombre">
                     </div>
-                    <div class="form-group acomp-row" id="acompanantes-group" style="display:none; flex-direction: row; gap: 1rem; align-items: flex-end;">
+                    <div class="form-group acomp-row" id="restriccion-group" style="display:none; flex-direction: row; gap: 1rem; align-items: flex-end;">
                         <div class="acompanantes-row">
                             <div class="acompanante-col">
-                                <label for="adultos">Adultos</label>
-                                <select id="adultos" name="adultos">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </div>
-                            <div class="acompanante-col">
-                                <label for="ninos">Niños</label>
-                                <select id="ninos" name="ninos">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
+                                <label for="restriccion">Restricción alimenticia</label>
+                                <select id="restriccion" name="restriccion" class="centered-select">
+                                    <option value="Ninguna">Ninguna</option>
+                                    <option value="Vegetariano">Vegetariano</option>
+                                    <option value="Vegano">Vegano</option>
+                                    <option value="Sin gluten">Sin gluten</option>
                                 </select>
                             </div>
                         </div>
                     </div>
+                    
                     <!-- <div class="form-group">
                         <label for="mensaje">Mensaje Especial (Opcional)</label>
                         <textarea id="mensaje" name="mensaje" rows="4" placeholder="Deja un mensaje para los novios..."></textarea>
                     </div> -->
                     <button type="submit" class="submit-btn" style="display:none;">
                         <i class="fas fa-heart"></i>
-                        <span id="submit-text">Confirmar Asistencia</span>
+                        <span id="submit-text">Confirmar Datos</span>
                     </button>                    
                 </form>
             </div>

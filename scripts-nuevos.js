@@ -63,11 +63,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const rsvpForm = document.getElementById('rsvpForm');
     const submitBtn = rsvpForm ? rsvpForm.querySelector('.submit-btn') : null;
     const submitText = document.getElementById('submit-text');
+    const idGroup = document.getElementById('id-group');
     const nombreGroup = document.getElementById('nombre-group');
-    const acompanantesGroup = document.getElementById('acompanantes-group');
-    const adultosSelect = document.getElementById('adultos');
-    const ninosSelect = document.getElementById('ninos');
+    const restriccionGroup = document.getElementById('restriccion-group');
+    // const adultosSelect = document.getElementById('adultos');
+    // const ninosSelect = document.getElementById('ninos');
     let selectedAsistencia = null;
+
+    // Ocultar los campos explícitamente al cargar la página
+    if (idGroup) idGroup.style.display = 'none';
+    if (nombreGroup) nombreGroup.style.display = 'none';
+    if (restriccionGroup) restriccionGroup.style.display = 'none';
+    if (submitBtn) submitBtn.style.display = 'none';
 
     // Mostrar campos según selección
     if (rsvpForm && rsvpForm.asistencia) {
@@ -80,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.display = 'flex';
           }
           if (this.value === 'Si') {
-            acompanantesGroup.style.display = 'flex';
+            idGroup.style.display = 'block';
+            restriccionGroup.style.display = 'flex';
           } else {
-            acompanantesGroup.style.display = 'none';
-            adultosSelect.value = '0';
-            ninosSelect.value = '0';
+            idGroup.style.display = 'none';
+            restriccionGroup.style.display = 'none';
           }
         });
       });
@@ -100,12 +107,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(rsvpForm);
         const data = {
           asistencia: formData.get('asistencia') || '',
+          id: formData.get('id') || '',
           nombre: formData.get('nombre') || '',
-          adultos: formData.get('adultos') || '0',
-          ninos: formData.get('ninos') || '0',
+          restriccion: formData.get('restriccion') || '',
         };
 
-        fetch('https://script.google.com/macros/s/AKfycbx4suRGduWD35ePxm53fOqHrIFcJqaelMFFbVhxPTvb8205xOyGcFRnMeMslcyed6DZUw/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbxD8kSn9U76VAF3lvY2c9CguWomugyjsbGK18zQVNc-0w2bZ4C8Zl7iu1yG33aG4oog-w/exec', {
           method: 'POST',
           mode: 'no-cors',
           headers: {
@@ -125,8 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
           // Restablecer el formulario
           rsvpForm.reset();
           nombreGroup.style.display = 'none';
-          acompanantesGroup.style.display = 'none';
-          
+          idGroup.style.display = 'none';
+          restriccionGroup.style.display = 'none';
+
           // Habilitar el botón para futuros envíos
           submitBtn.disabled = false;
           submitText.textContent = 'Confirmar Asistencia';

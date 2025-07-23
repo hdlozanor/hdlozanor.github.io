@@ -98,7 +98,7 @@ html, body {
         max-width: 90%;
         min-width: 0;
         margin: 1rem auto 1.2rem auto;
-        padding: 0.7rem;
+        padding: 0.5rem;
         box-sizing: border-box;
         overflow: visible;
         border-radius: 12px;
@@ -177,19 +177,85 @@ html, body {
     .form-group {
         width: 100% !important;
         text-align: center !important;
-        margin: 0.8rem auto !important;
+        margin: 10px auto !important;
+        padding: 0.5rem !important;
+        clear: both !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    /* Estilos para los inputs dentro de form-group */
+    .form-group input[type="text"] {
+        width: calc(100% - 32px) !important;
+        max-width: 90% !important;
+        padding: 8px 10px !important;
+        font-size: 1rem !important;
+        border-radius: 4px !important;
+        border: 1px solid #ccc !important;
+        text-align: center !important;
+    }
+    
+    /* Estilo específico para los campos que deben estar ocultos */
+    .form-group[style*="display: none"],
+    .form-group[style*="display:none"] {
+        display: none !important;
+    }
+    
+    /* Estilo específico para los campos que deben mostrarse */
+    .form-group[style*="display: block"],
+    .form-group[style*="display:block"] {
+        display: block !important;
+    }
+    
+    /* Estilo específico para los campos que deben mostrarse como flex */
+    .form-group[style*="display: flex"],
+    .form-group[style*="display:flex"] {
+        display: flex !important;
+    }
+    
+    #id-group, #nombre-group {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Estilos específicos para el grupo de acompañantes */
+    #acompanantes-group {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
     }
     
     .acompanantes-row {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        width: 100% !important;
+        width: calc(100% - 32px) !important;
+        max-width: 90% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
     }
     
     .acompanante-col {
         margin: 0.5rem 0 !important;
         text-align: center !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    /* Estilos para el select en versión móvil */
+    .centered-select {
+        text-align: center !important;
+        text-align-last: center !important;
+        font-size: 1rem !important;
+        /* width: calc(100% - 32px) !important; Mismo ancho que los inputs de texto */
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 8px 10px !important;
     }
     
     /* Navegación inferior siempre visible */
