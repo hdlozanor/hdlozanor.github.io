@@ -17,22 +17,75 @@ document.addEventListener('DOMContentLoaded', function() {
     if (musicBtn && audio) {
         let isPlaying = false;
         
-        function toggleAudio() {
-            if (isPlaying) {
-                audio.pause();
-                musicIcon.classList.remove('fa-heart-pulse');
-                musicIcon.classList.add('fa-heart');
-            } else {
-                audio.play().catch(error => {
-                    console.log('Error al reproducir audio:', error);
-                });
+        // Función para reproducir audio
+        function playAudio() {
+            audio.play().then(() => {
+                isPlaying = true;
                 musicIcon.classList.remove('fa-heart');
                 musicIcon.classList.add('fa-heart-pulse');
-            }
-            isPlaying = !isPlaying;
+                console.log('Audio iniciado automáticamente');
+            }).catch(error => {
+                console.log('Error al reproducir audio automáticamente:', error);
+                // Si falla el autoplay, mantener el botón disponible para que el usuario lo active
+                isPlaying = false;
+                musicIcon.classList.remove('fa-heart-pulse');
+                musicIcon.classList.add('fa-heart');
+            });
         }
         
+        // Función para pausar audio
+        function pauseAudio() {
+            audio.pause();
+            isPlaying = false;
+            musicIcon.classList.remove('fa-heart-pulse');
+            musicIcon.classList.add('fa-heart');
+        }
+        
+        function toggleAudio() {
+            if (isPlaying) {
+                pauseAudio();
+            } else {
+                playAudio();
+            }
+        }
+        
+        // Intentar reproducir automáticamente al cargar
+        setTimeout(() => {
+            playAudio();
+        }, 500);
+        
+        // Event listener para el botón
         musicBtn.addEventListener('click', toggleAudio);
+        
+        // Detectar cuando el audio se reproduce/pausa por otros medios
+        audio.addEventListener('play', function() {
+            isPlaying = true;
+            musicIcon.classList.remove('fa-heart');
+            musicIcon.classList.add('fa-heart-pulse');
+        });
+        
+        audio.addEventListener('pause', function() {
+            isPlaying = false;
+            musicIcon.classList.remove('fa-heart-pulse');
+            musicIcon.classList.add('fa-heart');
+        });
+        
+        // Para móviles: intentar reproducir en el primer toque en cualquier parte de la página
+        let userInteracted = false;
+        function handleFirstInteraction() {
+            if (!userInteracted) {
+                userInteracted = true;
+                if (!isPlaying) {
+                    playAudio();
+                }
+                // Remover los listeners después del primer uso
+                document.removeEventListener('touchstart', handleFirstInteraction);
+                document.removeEventListener('click', handleFirstInteraction);
+            }
+        }
+        
+        document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
+        document.addEventListener('click', handleFirstInteraction);
     }
     
     // ===== ZOOM DE IMAGEN =====
@@ -162,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // ===== CUENTA REGRESIVA =====
-    const weddingDate = new Date('October 19, 2025 15:00:00').getTime();
+    const weddingDate = new Date('October 19, 2025 12:00:00').getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
