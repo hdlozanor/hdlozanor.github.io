@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="section-scroll-nuevo.css">
+    <link rel="stylesheet" href="responsive-fix.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -230,61 +231,13 @@
                 <div class="decorative-line"></div>                
             </div>
             <div class="dress-note">
-                <br><p style="color: #d9534f; font-weight: 600;">Las confirmaciones se cerraron el <br> 19 de Septiembre de 2024</p> 
+                <br><p style="color: #d9534f; font-weight: 600; font-size: 1.1rem; line-height: 1.4;">Las confirmaciones se cerraron el 19 de Septiembre de 2024</p> 
             </div>
-            <div class="closed-confirmation-message" style="background: rgba(217, 83, 79, 0.1); border: 2px solid #d9534f; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center;">
-                <i class="fas fa-calendar-times" style="font-size: 2rem; color: #d9534f; margin-bottom: 10px;"></i>
-                <h3 style="color: #d9534f; margin: 10px 0;">Plazo de confirmación cerrado</h3>
-                <p style="color: #333; margin: 0;">Gracias a todos los que confirmaron su asistencia. <br>¡Los esperamos el 19 de Octubre para celebrar juntos!</p>
-            </div>    
-            <div class="rsvp-form-container" style="display: none;">
-                <form id="rsvpForm" class="rsvp-form">
-                    <div class="form-group asistencia-group">
-                        <label for="asistencia" class="asistencia-label">¿Podrás acompañarnos?</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="asistencia" value="Si" required>
-                                <span class="radio-custom"><i class="fas fa-heart"></i></span>
-                                ¡Sí, estaré ahí!
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="asistencia" value="No" required>
-                                <span class="radio-custom"><i class="fas fa-heart-broken"></i></span>
-                                No podré asistir
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group" id="id-group" style="display:none;">
-                        <label for="id">Núm Identificación</label>
-                        <input type="text" id="id" name="id">
-                    </div>                    
-                    <div class="form-group" id="nombre-group" style="display:none;">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre">
-                    </div>
-                    <div class="form-group acomp-row" id="restriccion-group" style="display:none; flex-direction: row; gap: 1rem; align-items: flex-end;">
-                        <div class="acompanantes-row">
-                            <div class="acompanante-col">
-                                <label for="restriccion">Restricción alimenticia</label>
-                                <select id="restriccion" name="restriccion" class="centered-select">
-                                    <option value="Ninguna">Ninguna</option>
-                                    <option value="Vegetariano">Vegetariano</option>
-                                    <option value="Vegano">Vegano</option>
-                                    <option value="Sin gluten">Sin gluten</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- <div class="form-group">
-                        <label for="mensaje">Mensaje Especial (Opcional)</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Deja un mensaje para los novios..."></textarea>
-                    </div> -->
-                    <button type="submit" class="submit-btn" style="display:none;">
-                        <i class="fas fa-heart"></i>
-                        <span id="submit-text">Confirmar Datos</span>
-                    </button>                    
-                </form>
+            <div class="closed-confirmation-message" style="background: rgba(217, 83, 79, 0.1); border: 2px solid #d9534f; border-radius: 10px; padding: 15px; margin: 15px 0; text-align: center; max-width: 85%; box-sizing: border-box;">
+                <i class="fas fa-calendar-times" style="font-size: 1.8rem; color: #d9534f; margin-bottom: 10px;"></i>
+                <h3 style="color: #d9534f; margin: 10px 0; font-size: 1.3rem; line-height: 1.3;">Plazo de confirmación cerrado</h3>
+                <p style="color: #333; margin: 0; font-size: 0.95rem; line-height: 1.4; padding: 0 5px;">Gracias a todos los que confirmaron su asistencia.<br>¡Los esperamos el 19 de Octubre para celebrar juntos!</p>
+            </div>
             </div>
             <!-- <button class="scroll-btn" onclick="scrollToSection('vestuario')">
                 <i class="fas fa-chevron-down"></i>

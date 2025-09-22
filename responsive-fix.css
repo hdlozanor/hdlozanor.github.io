@@ -1,0 +1,75 @@
+/* Ajustes responsivos para mensajes de confirmación */
+@media (max-width: 768px) {
+    .dress-note {
+        padding: 0 10px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .dress-note p {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+    }
+    
+    .closed-confirmation-message {
+        margin: 10px 5px !important;
+        padding: 12px 8px !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .closed-confirmation-message h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .closed-confirmation-message p {
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
+        padding: 0 2px !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Asegurar que el contenedor de la sección no cause overflow */
+    #confirmacion .container {
+        padding: 0 15px;
+        overflow: hidden;
+    }
+    
+    /* Ajuste adicional para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .dress-note p {
+            font-size: 0.95rem !important;
+        }
+        
+        .closed-confirmation-message {
+            margin: 8px 3px !important;
+            padding: 10px 6px !important;
+        }
+        
+        .closed-confirmation-message h3 {
+            font-size: 1rem !important;
+        }
+        
+        .closed-confirmation-message p {
+            font-size: 0.85rem !important;
+        }
+    }
+}
+
+/* Ocultar cualquier resto del formulario de confirmación */
+#rsvpForm, 
+.rsvp-form-container,
+.asistencia-group,
+.radio-group,
+.radio-option {
+    display: none !important;
+    visibility: hidden !important;
+}
